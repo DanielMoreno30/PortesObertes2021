@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800');
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 html {
-  font-size: 62.5%;
+  font-size: 0.630rem;
 }
 body {
   font-family: 'Open Sans', sans-serif;
@@ -25,7 +25,7 @@ p {
 }
 .button-primary {
   position: relative;
-  background-color: #f0940b;
+  background-color: #0089ff;
   color: #fff;
   font-size: 1.8rem;
   font-weight: 700;
@@ -33,7 +33,7 @@ p {
   z-index: 1;
 }
 .button-primary:hover {
-  color: #f0940b;
+  color: #0089ff;
   text-decoration: none;  
 }
 .button-primary::after {
@@ -58,23 +58,15 @@ p {
   -ms-transform: scaleX(1);
   transform: scaleX(1);
 }
-.overlay::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  background-color: rgba(0, 0, 0, .3);
-}
 .header-area {
   position: relative;
   height: 100vh;
-  background: #5bc0de;
+  background:#ffffff;
   background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repear;
-  background-size: cover;
+  background-size: cover;  
+  background-color: rgba(0, 0, 0, .3);
 }
 .banner {
   display: flex;
@@ -174,7 +166,7 @@ p {
 }
 .navbar .dropdown-menu .dropdown-item:hover {
   background: transparent;
-  color: #c0ca33;
+  color: #0089ff
 }
 .navbar .dropdown-menu .dropdown-item::before {
   content: '';
@@ -183,7 +175,7 @@ p {
   left: 0;
   top: 0;
   width: 5px;
-  background-color: #c0ca33;
+  background-color: #0089ff;
   opacity: 0;
   transition: opacity 0.2s ease-in;
 }
@@ -197,10 +189,10 @@ p {
   background-color: rgba(0, 0, 0, .9);
 }
 .navbar.fixed-top.navbar-dark .navbar-nav .nav-link.active {
-  color: #c0ca33;
+  color: #0089ff
 }
 .navbar.fixed-top.navbar-dark .navbar-nav .nav-link::after {
-  background-color: #c0ca33;
+  background-color: #0089ff
 }
 .content {
   padding: 120px 0;

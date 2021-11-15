@@ -2,23 +2,28 @@
 <html lang="esp">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
     <title>Portes Obertes</title>
     <style>
       body{
      font-family: "Arial"; 
      }
      </style>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="style/bootstrap.min.css">
     <link rel="stylesheet" href="style/navbar.css">
+    <link rel="stylesheet" href="style/carrousel.css">
     <link rel="icon"  href="img/politecnicsico.png" type="image/png" />
 </head>
+<!---------------------------------------BODY-------------------------------------->
 <body>
-<!-- -----------------------------------------NAVBAR----------------------------------------------------------------------- -->
+<!---------------------------------------NAVBAR-------------------------------------->
 <header class="header-area overlay">
     <nav class="navbar navbar-expand-md navbar-dark">
-    <img src="./img/politecnicsiconsinfondo.png" width="150" height="60" class="d-inline-block align-middle" alt="" loading="lazy" >
-		<div class="container">
+    <img src="img/riverspath.png" width="60" height="60" class="d-inline-block align-middle" alt="" loading="lazy" >
+		<div class="container fluid">
 			<a href="index.php" class="navbar-brand">Portes Obertes</a>
 			
 			<button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#main-nav">
@@ -28,9 +33,9 @@
 			</button>
 			
 			<div id="main-nav" class="collapse navbar-collapse">
-				<ul class="navbar-nav ml-auto">
+				<ul class="navbar-nav ms-auto">
 					<li><a href="index.php" class="nav-item nav-link active">Inicio</a></li>
-					<li><a href="#" class="nav-item nav-link">Cursos</a></li>
+					<li><a href="#cursos" class="nav-item nav-link">Cursos</a></li>
 					<li class="dropdown">
 						<a href="#" class="nav-item nav-link" data-toggle="dropdown">Juegos</a>
 						<!-- <div class="dropdown-menu">
@@ -56,20 +61,41 @@
 			</div>
 		</div>
 	</nav>
-
-<!-- -----------------------------------------BODY----------------------------------------------------------------------- --> 
-
-<div class="banner">
-	<div class="container">
-			<h1>Portes Obertes</h1>
-			<p></p>
-			<a href="#content" class="button button-primary">Qui som?</a>
-		</div>
-	</div>
+<!-----------------FINAL NAVBAR----------------->
+<!-----------------CARROUSEL---------------->  
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="./img/bannercolegio.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="./img/bannercolegio.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="./img/bannercolegio.jpg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    <div class="position-absolute top-50 start-50 translate-middle-x">          
+        <p class="tituloCarousel">Us donem la benvinguda a les Portes Obertes!</p>
+      </div>
+    <div class="position-absolute top-100 start-50 translate-middle-x">    
+        <a href="#flechainicio"><img src="./img/arrowDown.png" height="60" alt="ScrollDown"></a>
+    </div>
+  </div>
 </header>
+<!-----------------END CARROUSEL---------------->  
+<!-----------------TEXTO---------------->  
 <main>
 	<section id="content" class="content">
-		<div class="container">
+		<div class="container" id="flechainicio">
 			<div class="row">
 				<div class="col-md-4">
 					<p>
@@ -93,21 +119,15 @@
 		</div>
 	</section>
 </main>
-
-<!-- -----------------------------------------FOOTER----------------------------------------------------------------------- -->
-<!-- Footer -->
+<!-----------------END TEXTO---------------->  
+<!-----------------FINAL BODY----------------->  
+</body>
+<!-----------------FOOTER----------------->  
 <footer class="text-center text-lg-start bg-dark text-muted">
-  <!-- Section: Social media -->
-  <section
-    class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
-  >
-    <!-- Left -->
-    <div class="me-5 d-none d-lg-block">
-      <span>TEXTO A ESCRIBIR</span>
-    </div>
-    <!-- Left -->
-
-    <!-- Right -->
+  <section class="">
+  <div class="text-center">
+      <img src="img/politecnicsiconsinfondo.png" width="170" height="60" style="" class="d-inline-block align-middle" alt="" loading="lazy" >
+  </div>
     <!-- <div>
       <a href="" class="me-4 text-reset">
         <i class="fab fa-facebook-f"></i>
@@ -129,66 +149,41 @@
         <i class="fab fa-github"></i>
       </a>
     </div> -->
-    <!-- Right -->
   </section>
-  <!-- Section: Social media -->
-
-  <!-- Section: Links  -->
   <section class="">
     <div class="container text-center text-md-start mt-5">
-      <!-- Grid row -->
       <div class="row mt-3">
-        <!-- Grid column -->
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-          <!-- Content -->
           <h6 class="text-uppercase fw-bold mb-4">
-            Politècnics en Barcelona
+            Centre Urquinaona
           </h6>
           <p>
-          <i class="fas fa-map-marker-alt"></i> Centre Urquinaona <br>
-            Plaça Urquinaona, 10. 08010 Barcelona. <br>
-      <i class="fas fa-phone-alt"></i> 93 302 02 24 <br>
-      <i class="fas fa-at"></i> info@politecnics.barcelona
+            <i class="fas fa-map-marker-alt"></i>
+              Plaça Urquinaona, 10. <br> 08010 Barcelona. <br>
+            <i class="fas fa-phone-alt"></i> 93 302 02 24 <br>
+            info@politecnics.barcelona
           </p>
-		  <p>
-		  <i class="fas fa-map-marker-alt"></i> Centre Santa Anna<br>
-            C/Santa Anna, 28. 08002 Barcelona <br>
-      <i class="fas fa-phone-alt"></i> 93 302 41 06 <br>
-      <i class="fas fa-at"></i> info@politecnics.barcelona
+		      
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-2">
+          <h6 class="text-uppercase fw-bold mb-4">
+            Centre Santa Anna
+          </h6>
+          <p>
+            <i class="fas fa-map-marker-alt"></i>
+                  C/Santa Anna, 28. <br> 08002 Barcelona. <br>
+            <i class="fas fa-phone-alt"></i> 93 302 41 06 <br>
+            info@politecnics.barcelona
           </p>
         </div>
 
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
-            Products
-          </h6>
-          <p>
-            <a href="#!" class="text-reset">Vacio</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Vacio</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Vacio</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Vacio</a>
-          </p>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">
             Enlaces
           </h6>
           <p>
           <a href="#!" class="text-reset"><i class="fab fa-github"></i> GitHub</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Vacio</a>
           </p>
           <p>
             <a href="#!" class="text-reset">Vacio</a>
@@ -206,17 +201,20 @@
           <p><i class="fab fa-linkedin"></i> Pablo Ferrer</p>
           <p><i class="fab fa-linkedin"></i> Óscar Gonzalez</p>
           <p><i class="fab fa-linkedin"></i> Daniel Moreno</p>
-		  <p><i class="fab fa-linkedin"></i> Victor Soriano</p>
+		      <p><i class="fab fa-linkedin"></i> Victor Soriano</p>
         </div>
       </div>
     </div>
-	<p class="card-text"></p> Copyright © 2021 - 2022 - Proyecto DAW 2 (Grup 2) - Centre d’Estudis Politècnics</p>
+    <div class="text-center">
+	    <p class="card-text"></p> Copyright © 2021 - 2022 - Proyecto DAW 2 (Grup 2) - Centre d’Estudis Politècnics</p>
+    </div>
   </section>
 </footer>
+<!-----------------FINAL FOOTER----------------->  
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/navbar.js"></script>
   <script src="https://kit.fontawesome.com/668120ee8a.js" crossorigin="anonymous"></script>
 </body>
