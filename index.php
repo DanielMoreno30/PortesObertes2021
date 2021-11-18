@@ -14,7 +14,8 @@
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="style/bootstrap.min.css">
     <link rel="stylesheet" href="style/navbar.css">
-    <link rel="stylesheet" href="style/carrousel.css">
+    <link rel="stylesheet" href="style/carrousel.css">    
+    <link rel="stylesheet" href="style/estiloInicio.css">
     <link rel="icon"  href="img/politecnicsico.png" type="image/png" />
 </head>
 <!---------------------------------------BODY-------------------------------------->
@@ -64,7 +65,7 @@
 <!-----------------FINAL NAVBAR----------------->
 <!-----------------CARROUSEL---------------->  
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
+    <div class="carousel-inner" style="opacity: 25%;">
       <div class="carousel-item active">
         <img src="./img/bannercolegio.jpg" class="d-block w-100" alt="...">
       </div>
@@ -84,10 +85,12 @@
         <span class="visually-hidden">Next</span>
       </button>
     <div class="position-absolute top-50 start-50 translate-middle-x">          
-        <p class="tituloCarousel">Us donem la benvinguda a les Portes Obertes!</p>
+        <p class="tituloCarousel">Us donem la benvinguda al Politécnics!</p>
       </div>
+
+      <!-- COLOR FLECHA 9C9C9C -->
     <div class="position-absolute top-100 start-50 translate-middle-x">    
-        <a href="#flechainicio"><img src="./img/arrowDown.png" height="60" alt="ScrollDown"></a>
+        <a href="#flechainicio"><img src="./img/arrowDown.png" width="auto" height="60" alt="ScrollDown"></a>
     </div>
   </div>
 </header>
@@ -97,26 +100,123 @@
 	<section id="content" class="content">
 		<div class="container" id="flechainicio">
 			<div class="row">
-				<div class="col-md-4">
+        <!-----------------PARRAFO INICIAL ----------------> 
+				<div class="col-md-5">
 					<p>
-            Al Centre d’Estudis Politècnics disposem d’un equip professional i humà que vetlla en tot moment per satisfer l’experiència acadèmica del nostre alumnat. 
-            En tractar-se d’una formació presencial, li proposem que visqui una experiència d’aprenentatge amb els cinc sentits. 
-            A l’aula podem veure’ns, escoltar-nos, compartir, discutir i emocionar-nos. L’assistència a classe ens permet aprofitar millor l’experiència d’aprenentatge, d’una manera molt més enriquidora. 
-            Ens tenim a totes i tots per explicar, per preguntar, per dubtar, per equivocar-nos i per descobrir.
+          Al Centre d’Estudis Politècnics impartim cicles formatius de grau mitjà i grau superior de les especialitats de comerç i màrqueting, d’administració i finances, d’informàtica, i de turisme i gestió d’esdeveniments.
+          </p>
+          <p>
+          La nostra missió és el creixement de l’alumnat. Vetllem per l’assoliment de les seves competències professionals i habilitats personals que les empreses, en particular, i la societat, en general, demanden.
+          </p>
+          <p>
+          L’objectiu del Politècnics és convertir-nos en un centre de Formació Professional de referència a Catalunya.
           </p>
 				</div>
-				<div class="col-md-4">
-					<p>Per a la Direcció del centre, la qualitat del nostre equip docent i administratiu sempre ha estat un dels principals elements de valor diferencial. 
-            Per això, el Politècnics té un equip professional i humà especialitzat, amb experiència professional en els diversos sectors dels cicles formatius que s’hi imparteixen. 
-            És fonamental un equip que conegui i combini les realitats de l’aula i de l’empresa per poder acompanyar el nostre alumnat en el seu procés d’aprenentatge, de creixement personal i d’inserció en el mercat laboral.</p>
+        <div class="col-md-2">
 				</div>
-				<div class="col-md-4">
-					<p>Per una banda, al Politècnics disposem d’un programa de formació per al nostre equip professional i humà. 
-            Contempla formacions tècniques dels diferents sectors professionals de la nostra oferta educativa i d’innovació pedagògica per ser aplicades a les aules.
-            Per una altra, l’equip professional assisteix a formacions externes organitzades pel Departament d’Educació, universitats i altres institucions sectorials i educatives.</p>
+				<div class="col-md-5">
+          <!-----------------VIDEO----------------> 
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" height="300" width="600"src="https://www.youtube.com/embed/re1WCaQ1xbc" allowfullscreen></iframe>
+          </div>
+
 				</div>
 			</div>
 		</div>
+    <!-----------------SEPARACIÓN DE SECCIÓN----------------> 
+    <hr class="bg-primary border-3 border-top m-5 border-primary">
+    <!-----------------PARRAFO FRASE----------------> 
+    <div class="container" id="inicioFrase">      
+      <h1 style="color: #0089ff; text-align:center" class="display-3">FRASE</h1>
+			<div class="row">
+				<div class="col-md-5">
+					<p>
+          Al Centre d’Estudis Politècnics impartim cicles formatius de grau mitjà i grau superior de les especialitats de comerç i màrqueting, d’administració i finances, d’informàtica, i de turisme i gestió d’esdeveniments.
+          </p>
+          <p>
+          La nostra missió és el creixement de l’alumnat. Vetllem per l’assoliment de les seves competències professionals i habilitats personals que les empreses, en particular, i la societat, en general, demanden.
+          </p>
+          <p>
+          L’objectiu del Politècnics és convertir-nos en un centre de Formació Professional de referència a Catalunya.
+          </p>
+				</div>
+        <div class="col-md-2">
+				</div>
+        <!-----------------Imagen Frase----------------> 
+				<div class="col-md-5">
+          <img src="./img/frase.png" width="600" height="auto" alt="fraseImg">
+				</div>
+			</div>
+		</div>
+    <!-----------------SEPARACIÓN DE SECCIÓN----------------> 
+    <hr class="bg-primary border-3 border-top m-5 border-primary">
+    <!-----------------PARRAFO "QUE M'INTERESSA"----------------> 
+    <div class="container" id="inicioFrase">      
+      <h1 style="color: #0089ff; text-align:center" class="display-3">QUÉ M'INTERESSA?</h1>
+			<div class="row">
+        <!-----------------NO TINC NI IDEA----------------> 
+				<div class="col-md-4">          
+          <p><h3 style="text-align:center" class="display-8">No tinc ni idea...</h3></p>			
+        
+
+          <p> <img src="./img/placeholder.jpg" class="imgOrientacio" width="200" height="auto" alt="fraseImg"> </p>
+          <p style="text-align: center;">
+            Al CEP oferim cursos molt variats. T'interessará coneixer més de les nostres opcions abans de profunditzar en la especialitat.
+          </p>
+				</div>
+        <!-----------------SE QUINA RAMA VULL----------------> 
+        <div class="col-md-4">          
+          <p><h3 style="text-align:center" class="display-8">Sé quina rama vull!</h3></p>			
+        
+          <p style="text-align: center;"> <img src="./img/placeholder.jpg" class="imgOrientacio" width="200" height="auto" alt="fraseImg"> </p>
+           <!-----------------LLISTA DE RAMES---------------->            
+           <div class="d-grid gap-2 d-md-block col-9 mx-auto text-center">
+                  <button type="button" class="btn btn-lg btn-danger">  Comerç i Màrqueting</button>
+                  <button type="button" class="btn btn-lg btn-primary">Hoteleria i Turisme</button>
+                  <button type="button" class="btn btn-lg btn-warning">Informàtica i Comunicacions</button>
+                  <button type="button" class="btn btn-lg btn-success">Administració i Gestió</button>
+            </div>
+
+
+            <!-- <div class="row">
+              <div class="col-12 col-sm-6">
+                <div class="d-grid gap-2">
+                  <button type="button" class="btn btn-danger">Comerç i Màrqueting</button>
+                </div>
+                
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="d-grid gap-2">
+                  <button type="button" class="btn btn-primary">Hoteleria i Turisme</button>
+                </div>
+                
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="d-grid gap-2">
+                  <button type="button" class="btn btn-warning">Informàtica i Comunicacions</button>
+                </div>
+                
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="d-grid gap-2">
+                  <button type="button" class="btn btn-success">Administració i Gestió</button>
+                </div>
+                
+              </div>
+            </div> -->
+				</div>
+        <!-----------------TINC CLAR EL CURS----------------> 
+				<div class="col-md-4">          
+          <p><h3 style="text-align:center" class="display-8">Tinc clar el curs.</h3></p>			
+        
+          <p> <img src="./img/placeholder.jpg" class="imgOrientacio" width="200" height="auto" alt="fraseImg"> </p>
+          <p style="text-align: center;">
+            Al CEP oferim cursos molt variats. T'interessará coneixer més de les nostres opcions abans de profunditzar en la especialitat.
+          </p>
+				</div>
+			</div>
+		</div>
+
 	</section>
 </main>
 <!-----------------END TEXTO---------------->  

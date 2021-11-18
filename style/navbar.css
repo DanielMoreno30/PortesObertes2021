@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800');
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 html {
-  font-size: 0.630rem;
+  font-size: 0.53645833333333vw;
 }
 body {
   font-family: 'Open Sans', sans-serif;
@@ -14,7 +14,7 @@ h1 {
 }
 p {
   margin-bottom: 0.5em;
-  font-size: 1.6rem;
+  font-size: 16px;
   line-height: 1.6;
 }
 .button {
@@ -66,7 +66,7 @@ p {
   background-position: center center;
   background-repeat: no-repear;
   background-size: cover;  
-  background-color: rgba(0, 0, 0, .3);
+  background-color: #113d66;
 }
 .banner {
   display: flex;
