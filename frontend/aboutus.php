@@ -4,18 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portes Obertes</title>
-    <style>
-      body{
-     font-family: "Arial"; 
-     }
-     </style>
-    <link rel="stylesheet" href="../style/bootstrap.min.css">
-    <link rel="icon"  href="../img/politecnicsico.png" type="image/png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/bootstrap.min.css">
     <link rel="stylesheet" href="../style/navbaraboutus.css">
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <link rel="icon"  href="../img/politecnicsico.png" type="image/png" />
 </head>
 <!---------------------------------------BODY-------------------------------------->
-<body>
+<body style="font-family: 'Assistant';">
 <!---------------------------------------NAVBAR-------------------------------------->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
     <img src="../img/riverspath.png" width="60" height="60" class="d-inline-block align-middle" alt="" loading="lazy" >
@@ -31,7 +30,7 @@
               <li class="dropdown">
                 <a href="aboutus.php" class="nav-item nav-link">Sobre Nosotros</a>
               </li>
-              <li><a href="#" class="nav-item nav-link">Contacto</a></li>
+              <li><a href="formcontacto.php" class="nav-item nav-link">Contacto</a></li>
             </ul>
           </div>
         </div>
