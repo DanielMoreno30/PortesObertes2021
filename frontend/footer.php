@@ -1,7 +1,7 @@
 <footer class="text-center text-lg-start bg-dark text-muted">
   <section class="">
   <div class="text-center">
-      <img src="/1rProjecteDAW2b2122/img/politecnicsiconsinfondo.png" width="170" height="60" style="" class="d-inline-block align-middle" alt="" loading="lazy" >
+      <img src="/1rProjecteDAW2b2122/img/politecnicsiconsinfondo.png" width="170" height="60" class="d-inline-block align-middle" alt="" loading="lazy" >
   </div>
     <!-- <div>
       <a href="" class="me-4 text-reset">
@@ -59,12 +59,6 @@
           </h6>
           <p>
           <a href="#!" class="text-reset"><i class="fab fa-github"></i> GitHub</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Vacio</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Vacio</a>
           </p>
         </div>
 

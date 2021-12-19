@@ -1,196 +1,235 @@
 <!DOCTYPE html>
 <html lang="esp">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="HandheldFriendly" content="true">
-    <title>Portes Obertes</title>
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Assistant&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style/bootstrap.min.css">
-    <link rel="stylesheet" href="style/navbar.css">
-    <link rel="stylesheet" href="style/carrousel.css">    
-    <link rel="stylesheet" href="style/estiloInicio.css">
-    <link rel="icon"  href="img/politecnicsico.png" type="image/png" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="HandheldFriendly" content="true">
+  <title>Portes Obertes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/bootstrap.min.css">
+  <link rel="stylesheet" href="style/navbar.css">
+  <link rel="stylesheet" href="style/carrousel.css">
+  <link rel="stylesheet" href="style/login.css">
+  <link rel="stylesheet" href="style/estiloInicio.css">
+  <link rel="icon" href="img/politecnicsico.png" type="image/png" />
 </head>
 <!---------------------------------------BODY-------------------------------------->
+
 <body style="font-family: 'Assistant';">
-<!---------------------------------------NAVBAR-------------------------------------->
-<?php
-    include 'frontend/navbar.php';
-?>
-<!---------------------------------------FINAL NAVBAR-------------------------------------->
-<!-----------------CARROUSEL---------------->  
-  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner" style="opacity: 25%;">
-      <div class="carousel-item active">
-        <img src="./img/bannercolegio.jpg" class="d-block w-100" alt="...">
+  <!---------------------------------------NAVBAR-------------------------------------->
+  <?php
+      include 'frontend/login.php';
+      include 'frontend/navbar.php';
+    ?>
+    <!-----------------FINAL NAVBAR----------------->
+    <header class="header-area overlay">
+    <!-----------------CARROUSEL---------------->
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner" style="opacity: 25%;">
+        <div class="carousel-item active">
+          <img src="./img/bannercolegio.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="./img/bannercolegio2.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="./img/bannercolegio3.jpg" class="d-block w-100" alt="...">
+        </div>
       </div>
-      <div class="carousel-item">
-        <img src="./img/bannercolegio.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="./img/bannercolegio.jpg" class="d-block w-100" alt="...">
-      </div>
-    </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
+        <span class="visually-hidden">Anterior</span>
       </button>
       <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
+        <span class="visually-hidden">Seguent</span>
       </button>
-    <div class="position-absolute top-50 start-50 translate-middle-x">          
-        <p class="tituloCarousel">Us donem la benvinguda al Politécnics!</p>
+      <div class="position-absolute top-50 start-50 translate-middle-x">
+        <p class="tituloCarousel">Us donem la benvinguda al Politècnics!</p>
       </div>
 
       <!-- COLOR FLECHA 9C9C9C -->
-    <div class="position-absolute top-100 start-50 translate-middle-x">    
+      <div class="position-absolute top-100 start-50 translate-middle-x">
         <a href="#flechainicio"><img src="./img/arrowDown.png" width="auto" height="60" alt="ScrollDown"></a>
+      </div>
     </div>
-  </div>
-</header>
-<!-----------------END CARROUSEL---------------->  
-<!-----------------TEXTO---------------->  
-<main>
-	<section id="content" class="content">
-		<div class="container" id="flechainicio">
-			<div class="row">
-        <!-----------------PARRAFO INICIAL ----------------> 
-				<div class="col-md-5">
-					<p>
-          Al Centre d’Estudis Politècnics impartim cicles formatius de grau mitjà i grau superior de les especialitats de comerç i màrqueting, d’administració i finances, d’informàtica, i de turisme i gestió d’esdeveniments.
-          </p>
-          <p>
-          La nostra missió és el creixement de l’alumnat. Vetllem per l’assoliment de les seves competències professionals i habilitats personals que les empreses, en particular, i la societat, en general, demanden.
-          </p>
-          <p>
-          L’objectiu del Politècnics és convertir-nos en un centre de Formació Professional de referència a Catalunya.
-          </p>
-				</div>
-        <div class="col-md-2">
-				</div>
-				<div class="col-md-5">
-          <!-----------------VIDEO----------------> 
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" height="300" width="450"src="https://www.youtube.com/embed/re1WCaQ1xbc" allowfullscreen></iframe>
+  </header>
+  <!-----------------END CARROUSEL---------------->
+  <!-----------------TEXTO---------------->
+  <main>
+    
+      <!-----------------Este H5 sirve como enlace para el botón.---------------->
+    <h5 style="color: #0089ff; text-align:center; visibility:hidden;" id="flechainicio" class="display-3" ></h5>
+    <section id="content" class="content">
+      <div class="container" >
+        <div class="row">
+          <!-----------------PARRAFO INICIAL ---------------->
+          <div class="col-md-5">
+            <p>
+              Al Centre d’Estudis Politècnics impartim cicles formatius de grau mitjà i grau superior de les especialitats de comerç i màrqueting, d’administració i finances, d’informàtica, i de turisme i gestió d’esdeveniments.
+            </p>
+            <p>
+              La nostra missió és el creixement de l’alumnat. Vetllem per l’assoliment de les seves competències professionals i habilitats personals que les empreses, en particular, i la societat, en general, demanden.
+            </p>
+            <p>
+              L’objectiu del Politècnics és convertir-nos en un centre de Formació Professional de referència a Catalunya.
+            </p>
           </div>
-				</div>
-			</div>
-		</div>
-    <!-----------------SEPARACIÓN DE SECCIÓN----------------> 
-    <hr class="bg-primary border-3 border-top m-5 border-primary">
-    <!-----------------PARRAFO FRASE----------------> 
-    <div class="container" id="inicioFrase">      
-      <h1 style="color: #0089ff; text-align:center" class="display-3">FRASE</h1>
-			<div class="row">
-				<div class="col-md-5">
-					<p>
-          Al Centre d’Estudis Politècnics impartim cicles formatius de grau mitjà i grau superior de les especialitats de comerç i màrqueting, d’administració i finances, d’informàtica, i de turisme i gestió d’esdeveniments.
-          </p>
-          <p>
-          La nostra missió és el creixement de l’alumnat. Vetllem per l’assoliment de les seves competències professionals i habilitats personals que les empreses, en particular, i la societat, en general, demanden.
-          </p>
-          <p>
-          L’objectiu del Politècnics és convertir-nos en un centre de Formació Professional de referència a Catalunya.
-          </p>
-				</div>
-        <div class="col-md-2">
-				</div>
-        <!-----------------Imagen Frase----------------> 
-				<div class="col-md-5">
-          <img src="./img/frase.png" width="450" height="auto" alt="fraseImg">
-				</div>
-			</div>
-		</div>
-    <!-----------------SEPARACIÓN DE SECCIÓN----------------> 
-    <hr class="bg-primary border-3 border-top m-5 border-primary">
-    <!-----------------PARRAFO "QUE M'INTERESSA"----------------> 
-    <div class="container" id="inicioFrase">      
-      <h1 style="color: #0089ff; text-align:center" class="display-3">QUÉ M'INTERESSA?</h1>
-			<div class="row">
-        <!-----------------NO TINC NI IDEA----------------> 
-				<div class="col-md-4">          
-          <p><h3 style="text-align:center" class="display-8">No tinc ni idea...</h3></p>			
-        
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-5">
+            <!-----------------VIDEO---------------->
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" height="300" width="500" src="https://www.youtube.com/embed/re1WCaQ1xbc" allowfullscreen></iframe>
+            </div>
 
-          <p> <img src="./img/placeholder.jpg" class="imgOrientacio" width="200" height="auto" alt="fraseImg"> </p>
-          <p style="text-align: center;">
-            Al CEP oferim cursos molt variats. T'interessará coneixer més de les nostres opcions abans de profunditzar en la especialitat.
-          </p>
-				</div>
-        <!-----------------SE QUINA RAMA VULL----------------> 
-        <div class="col-md-4">          
-          <p><h3 style="text-align:center" class="display-8">Sé quina rama vull!</h3></p>			
-        
-          <p style="text-align: center;"> <img src="./img/placeholder.jpg" class="imgOrientacio" width="200" height="auto" alt="fraseImg"> </p>
-           <!-----------------LLISTA DE RAMES---------------->            
-           <div class="d-grid gap-2 d-md-block col-9 mx-auto text-center">
-                  <button type="button" class="btn btn-lg btn-danger">  Comerç i Màrqueting</button>
-                  <button type="button" class="btn btn-lg btn-primary">Hoteleria i Turisme</button>
-                  <button type="button" class="btn btn-lg btn-warning">Informàtica i Comunicacions</button>
-                  <button type="button" class="btn btn-lg btn-success">Administració i Gestió</button>
+          </div>
+        </div>
+      </div>
+      <!-----------------SEPARACIÓN DE SECCIÓN---------------->
+      <hr class="bg-primary border-3 border-top m-5 border-primary">
+      <!-----------------PARRAFO FRASE---------------->
+      <div class="container" id="inicioFrase">
+        <h1 style="font-family: 'Montserrat'; color: #0089ff; text-align:center; letter-spacing: 10px;" class="display-3">FRASE</h1>
+        <div class="row">
+          <div class="col-md-5">
+            <p>
+              Al Politècnics considerem la FRASE com les capacitats transversals que afecten a diferents llocs de treball i que
+              són transferibles a noves i diferents situacions de l’àmbit personal i professional.
+            </p>
+            <p>
+              Entre aquestes capacitats destaquen les d&#39;autonomia, innovació, organització del treball, responsabilitat, relació interpersonal, treball en
+              equip i resolució de problemes.
+            </p>
+                  
+            <p>
+              Al Politècnics resumim totes aquestes capacitats en cinc objectius que formen els pilars de la nostra FRASE:
+              Flexibilitat, Responsabilitat, Autonomia, Sociabilitat i Evolució.
+            </p>
+          </div>
+          <div class="col-md-2">
+          </div>
+          <!-----------------Imagen Frase---------------->
+          <div class="col-md-5">
+            <img src="./img/frase.png" width="500" height="auto" alt="fraseImg">
+          </div>
+        </div>
+      </div>
+      <!-----------------SEPARACIÓN DE SECCIÓN---------------->
+      <hr class="bg-primary border-3 border-top m-5 border-primary">
+      <!-----------------PARRAFO "QUE M'INTERESSA"---------------->
+      <div class="container" id="inicioFrase">
+        <h1 style="font-family: 'Montserrat'; color: #0089ff; text-align:center; letter-spacing: 10px;" class="display-3">QUÉ M'INTERESSA?</h1>
+        <div class="row">
+          <!-----------------NO TINC NI IDEA---------------->
+          <div class="col-md-4">
+            <div class="p-5">
+              <h3 style="text-align:center; font-size: 18px;" class="display-8">No tinc ni idea...</h3>
+            </div>
+            <div class= "p-5"> 
+              <img src="./img/noTincNiIdea.jpg" class="imgOrientacio" width="200" height="auto" alt="fraseImg"> </div>
+            <p style="text-align: center;">
+              Al CEP oferim cursos molt variats. T'interessará coneixer més de les nostres opcions abans de profunditzar en la especialitat.
+            </p>
+          </div>
+          <!-----------------SE QUINA RAMA VULL---------------->
+          <div class="col-md-4">
+            <div class="p-5">
+              <h3 style="text-align:center; font-size: 18px;" class="display-8">Sé quina rama vull!</h3>
+            </div>
+
+            <div class="p-5" style="text-align: center;"> <img src="./img/seQuinaRamaVull.jpg" class="imgOrientacio" width="200" height="auto" alt="fraseImg"> </div>
+            <!-----------------LLISTA DE RAMES---------------->
+
+            <div class="container" style="text-align:center">
+              <div class="row offset-md-2">
+                <div class="bg-danger col-12 col-md-5  m-2 " style="color:white; font-size:12px;">Comerç i Màrqueting</div>
+
+                <div class="bg-primary col-12 col-md-5 m-2" style="color:white; font-size:12px;">Hoteleria i Turisme</div>                
+                <div class="bg-warning col-12 col-md-5 m-2" style="color:white; font-size:12px;">Informàtica i comunicacions</div>
+
+                <div class="bg-success col-12 col-md-5 m-2  " style="color:white; font-size:12px;" href="./frontend/cursos.php#familiaIC">Administració i Gestió
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-----------------TINC CLAR EL CURS---------------->
+          <div class="col-md-4 text-center">
+            <div class="p-5"><h3 class="display-8" style="text-align:center; font-size: 18px;">Tinc clar el curs.</h3></div>
+            <div class="p-5"> 
+              <img src="./img/tincClarElCurs.jpg" class="imgOrientacio" width="200" height="auto" alt="fraseImg"> 
+            </div>
+
+            <div class="dropdown" >
+            <div class="col-12 text-center ">
+              <button style="font-size: 15px;" class="btn btn-lg btn-secondary dropdown-toggle btn-success align-self-center" type="button" id="brnListaCursos" data-bs-toggle="dropdown" aria-expanded="false">Cursos...</button>
+                <!-- <button type="btn btn-secondary dropdown-toggle" id="brnListaCursos" class="btn btn-lg btn-success" style="font-size:15px">Escollir...</button> -->
+                <script>
+                  document.getElementById("brnListaCursos").addEventListener("click", myFunction);
+
+                  function myFunction() {
+                    if (document.getElementById("listaCursos").style.visibility === "visible"){
+                      document.getElementById("listaCursos").style.visibility = "hidden";
+                    }
+                    else {
+                      document.getElementById("listaCursos").style.visibility = "visible"
+                    }
+                  }
+                </script>
+
+                <div id="listaCursos" class="FixedHeightContainer" style="position: relative; left: 50%; transform: translate(-50%); visibility:hidden;">
+                  <div class="Content" style="font-size: 15px;">
+                    
+                    <a style="color:black" href="./frontend/cursos.php#familiaCM" class="nav-item nav-link">GM Activitats Comercials</a>
+                    <a style="color:black" href="./frontend/cursos.php#familiaCM" class="nav-item nav-link">GS Màrqueting i Publicitat</a>
+                    <a style="color:black" href="./frontend/cursos.php#familiaCM" class="nav-item nav-link">GS Gestió de Vendes i Espais Comercials</a>
+                    <a style="color:black" href="./frontend/cursos.php#familiaCM" class="nav-item nav-link">GS Comerç Internacional</a>
+                    <a style="color:black" href="./frontend/cursos.php#familiaHT" class="nav-item nav-link">GS Agències de Viatges i Gestió d’Esdeveniment</a>
+                    <a style="color:black" href="./frontend/cursos.php#familiaIC" class="nav-item nav-link">GM Sistemes Microinformàtics i Xarxes</a>
+                    <a style="color:black" href="./frontend/cursos.php#familiaIC" class="nav-item nav-link">GS Desenvolupament Aplicacions Web</a>
+                    <a style="color:black" href="./frontend/cursos.php#familiaIC" class="nav-item nav-link">GS Desenvolupament Aplicacions Multiplataforma</a>
+                    <a style="color:black" href="./frontend/cursos.php#familiaAG" class="nav-item nav-link">GM Gestió Administrativa</a>
+                    <a style="color:black" href="./frontend/cursos.php#familiaAG" class="nav-item nav-link">GS Administració i Finances</a>
+                    <a style="color:black" href="./frontend/cursos.php#familiaAG" class="nav-item nav-link">GS Assistència a la Direcció</a>
+                    
+
+
+
+                  </div>
+                </div>
+            </div>
             </div>
 
 
-            <!-- <div class="row">
-              <div class="col-12 col-sm-6">
-                <div class="d-grid gap-2">
-                  <button type="button" class="btn btn-danger">Comerç i Màrqueting</button>
-                </div>
-                
-              </div>
-              <div class="col-12 col-sm-6">
-                <div class="d-grid gap-2">
-                  <button type="button" class="btn btn-primary">Hoteleria i Turisme</button>
-                </div>
-                
-              </div>
-              <div class="col-12 col-sm-6">
-                <div class="d-grid gap-2">
-                  <button type="button" class="btn btn-warning">Informàtica i Comunicacions</button>
-                </div>
-                
-              </div>
-              <div class="col-12 col-sm-6">
-                <div class="d-grid gap-2">
-                  <button type="button" class="btn btn-success">Administració i Gestió</button>
-                </div>
-                
-              </div>
-            </div> -->
-				</div>
-        <!-----------------TINC CLAR EL CURS----------------> 
-				<div class="col-md-4">          
-          <p><h3 style="text-align:center" class="display-8">Tinc clar el curs.</h3></p>			
-        
-          <p> <img src="./img/placeholder.jpg" class="imgOrientacio" width="200" height="auto" alt="fraseImg"> </p>
-          <p style="text-align: center;">
-            Al CEP oferim cursos molt variats. T'interessará coneixer més de les nostres opcions abans de profunditzar en la especialitat.
-          </p>
-				</div>
-			</div>
-		</div>
+          </div>
+        </div>
+      </div>
 
-	</section>
-</main>
-<!-----------------END TEXTO---------------->  
-<!-----------------FINAL BODY----------------->  
+    </section>
+  </main>
+  <!-----------------END TEXTO---------------->
+  <!-----------------FINAL BODY----------------->
 </body>
-<!-----------------FOOTER----------------->  
+<!-----------------FOOTER----------------->
 <?php
     include 'frontend/footer.php';
 ?>
-<!-----------------FINAL FOOTER----------------->   
+<!-----------------FINAL FOOTER----------------->
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="js/navbar.js"></script>
-  <script src="https://kit.fontawesome.com/668120ee8a.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/navbar.js"></script>
+<script src="https://kit.fontawesome.com/668120ee8a.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
+
+<!-- offset y d-flex -->

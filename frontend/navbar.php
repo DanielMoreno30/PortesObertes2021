@@ -13,10 +13,10 @@
 			
 			<div id="main-nav" class="collapse navbar-collapse">
 				<ul class="navbar-nav ms-auto">
-					<li><a href="index.php" class="nav-item nav-link active">Inicio</a></li>
-					<li><a href="#cursos" class="nav-item nav-link">Cursos</a></li>
+					<li><a href="index.php" class="nav-item nav-link active">Inici</a></li>
+					<li><a href="frontend/cursos.php" class="nav-item nav-link">Cursos</a></li>
 					<li class="dropdown">
-						<a href="#" class="nav-item nav-link" data-toggle="dropdown">Juegos</a>
+						<a href="frontend/games.php" class="nav-item nav-link" data-toggle="dropdown">Jocs</a>
 						<!-- <div class="dropdown-menu">
 							<a href="#" class="dropdown-item">Juego 1</a>
 							<a href="#" class="dropdown-item">Juego 2</a>
@@ -26,7 +26,7 @@
 						</div> -->
 					</li>
 					<li class="dropdown">
-						<a href="frontend/aboutus.php" class="nav-item nav-link">Sobre Nosotros</a>
+						<a href="frontend/aboutus.php" class="nav-item nav-link">Sobre Nosaltres</a>
 						<!-- <div class="dropdown-menu">
 							<a href="frontend/aboutus.php" class="dropdown-item">Sebas Angelov</a>
 							<a href="#" class="dropdown-item">Pablo Ferrer</a>
@@ -35,7 +35,12 @@
 							<a href="#" class="dropdown-item">Victor Soriano</a>
 						</div> -->
 					</li>
-					<li><a href="frontend/formcontacto.php" class="nav-item nav-link">Contacto</a></li>
+					<li><a href="frontend/formcontacto.php" class="nav-item nav-link">Contacte</a></li>
+					<li>
+						<button type="button" class="btn btn-primary shadow-none" data-bs-toggle="modal" data-bs-target="#modaliniciarsesion" style="border: none; background: transparent; outline: none;">
+						<img src="./img/login.png" width="50" height="50" alt="submit" />
+						</button>
+					</li>
 				</ul>
 			</div>
 		</div>

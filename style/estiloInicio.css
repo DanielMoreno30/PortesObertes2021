@@ -2,3 +2,12 @@ img.imgOrientacio{
     margin:auto; 
     display:block;
 }
+#wgtmsr{
+    width:100%;   
+   }
+.FixedHeightContainer
+{    
+    height: 250px;
+    width:250px;
+    overflow: auto;
+}

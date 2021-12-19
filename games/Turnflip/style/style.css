@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
+div.contenedorVoltorb{
+  display: grid;
+  grid-template: auto auto auto auto auto auto/auto auto auto auto auto auto;
+  grid-column-gap: 1px;
+  grid-row-gap: 1px;
+  width: 100%;
+}
+div.celdaVoltorb{
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  
+
+
+  
+
+
+}
+.animacioMoviment{
+  animation-name: movimentNumero;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+
+}
+
+@keyframes movimentNumero{
+
+  from {
+    text-indent: 100%;
+
+  }
+  to {
+    text-indent: 0%;
+  }
+  
+}
+div.textoWeb{
+  font-family: 'Lobster', cursive;
+  font-size: 40px;
+  
+}

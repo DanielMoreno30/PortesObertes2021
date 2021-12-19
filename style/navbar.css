@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800');
 @import url('https://fonts.googleapis.com/css?family=Lobster');
-@import url('https://fonts.googleapis.com/css2?family=Assistant&display=swap');
 html {
-  font-size: 0.625rem;
+  font-size: 0.630rem;
 }
 body {
   font-family: 'Open Sans', sans-serif;
@@ -91,7 +90,7 @@ p {
   padding: 0;
   width: 100%;
   transition: background 0.6s ease-in;
-  z-index: 99999;
+  z-index: 10;
 }
 .navbar .navbar-brand {
   font-family: 'Lobster', cursive;
@@ -190,10 +189,10 @@ p {
   background-color: rgba(0, 0, 0, .9);
 }
 .navbar.fixed-top.navbar-dark .navbar-nav .nav-link.active {
-  color: #0089ff
+  color: #0089ff;
 }
 .navbar.fixed-top.navbar-dark .navbar-nav .nav-link::after {
-  background-color: #0089ff
+  background-color: #0089ff;
 }
 .content {
   padding: 120px 0;
