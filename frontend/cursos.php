@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
     <link rel="icon"  href="../img/politecnicsico.png" type="image/png" />
 </head>
-<body style="font-family: 'Assistant';" class="d-block overflow-scroll m-0 p-0" data-bs-spy="scroll">
+<body style="font-family: 'Assistant';" class="d-block" data-bs-spy="scroll">
     <!---------------------------------------NAVBAR-------------------------------------->
     <?php
         include 'navbarfija.php';

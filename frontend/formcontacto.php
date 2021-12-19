@@ -30,7 +30,7 @@
                 <h1 style="color: #0089ff; font-family: 'Montserrat'; letter-spacing: 10px;" class="display-3">FORMULARI DE CONTACTE</h1>
             </center>
         </header>
-        <div class="container mt-5">
+        <div class="container mt-5" style="width: 80%;">
         <form action="phpmailer.php" class="row g-3" method="POST">
           <div class="col-md-6">
             <label for="nombre" class="form-label">Nom</label>
