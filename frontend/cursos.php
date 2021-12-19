@@ -13,12 +13,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/bootstrap.min.css">
     <link rel="stylesheet" href="../style/navbaraboutus.css">
+    <link rel="stylesheet" href="../style/login.css">
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
     <link rel="icon"  href="../img/politecnicsico.png" type="image/png" />
 </head>
 <body style="font-family: 'Assistant';" class="d-block" data-bs-spy="scroll">
     <!---------------------------------------NAVBAR-------------------------------------->
     <?php
+        include 'login.php';
         include 'navbarfija.php';
     ?>
 

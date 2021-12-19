@@ -37,7 +37,7 @@
 					</li>
 					<li><a href="frontend/formcontacto.php" class="nav-item nav-link">Contacte</a></li>
 					<li>
-						<button type="button" class="btn btn-primary shadow-none" data-bs-toggle="modal" data-bs-target="#modaliniciarsesion" style="border: none; background: transparent; outline: none;">
+						<button type="button" class="btn btn-primary shadow-none" data-bs-toggle="modal" data-bs-target="#modaliniciarsesion" style="border: none; background: transparent; outline: none; margin-top: 8px;">
 						<img src="./img/login.png" width="50" height="50" alt="submit" />
 						</button>
 					</li>

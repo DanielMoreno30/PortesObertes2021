@@ -150,12 +150,12 @@
 
             <div class="container" style="text-align:center">
               <div class="row offset-md-2">
-                <div class="bg-danger col-12 col-md-5  m-2 " style="color:white; font-size:12px;">Comerç i Màrqueting</div>
+                <div class="bg-danger col-12 col-md-5  m-2 " style="color:white; font-size:12px;">Comerç <br> Màrqueting <br></div>
 
-                <div class="bg-primary col-12 col-md-5 m-2" style="color:white; font-size:12px;">Hoteleria i Turisme</div>                
-                <div class="bg-warning col-12 col-md-5 m-2" style="color:white; font-size:12px;">Informàtica i comunicacions</div>
+                <div class="bg-primary col-12 col-md-5 m-2" style="color:white; font-size:12px;">Hoteleria <br> Turisme <br></div>                
+                <div class="bg-warning col-12 col-md-5 m-2" style="color:white; font-size:12px;">Informàtica <br> Comunicacions <br></div>
 
-                <div class="bg-success col-12 col-md-5 m-2  " style="color:white; font-size:12px;" href="./frontend/cursos.php#familiaIC">Administració i Gestió
+                <div class="bg-success col-12 col-md-5 m-2  " style="color:white; font-size:12px;" href="./frontend/cursos.php#familiaIC">Administració <br> Gestió <br>
                 </div>
               </div>
             </div>
@@ -168,7 +168,7 @@
             </div>
 
             <div class="dropdown" >
-            <div class="col-12 text-center ">
+            <div class="offset-3 col-6 text-center ">
               <button style="font-size: 15px;" class="btn btn-lg btn-secondary dropdown-toggle btn-success align-self-center" type="button" id="brnListaCursos" data-bs-toggle="dropdown" aria-expanded="false">Cursos...</button>
                 <!-- <button type="btn btn-secondary dropdown-toggle" id="brnListaCursos" class="btn btn-lg btn-success" style="font-size:15px">Escollir...</button> -->
                 <script>

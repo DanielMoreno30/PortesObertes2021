@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style/bootstrap.min.css">
     <link rel="stylesheet" href="../style/games.css">
+    <link rel="stylesheet" href="../style/login.css">
     <link rel="stylesheet" href="../style/navbaraboutus.css">
     <link rel="icon"  href="../img/politecnicsico.png" type="image/png" />
 </head>

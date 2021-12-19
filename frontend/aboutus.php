@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/bootstrap.min.css">
     <link rel="stylesheet" href="../style/navbaraboutus.css">
+    <link rel="stylesheet" href="../style/login.css">
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
     <link rel="icon"  href="../img/politecnicsico.png" type="image/png" />
 </head>
@@ -74,7 +75,7 @@
                       <p class="card-text">Hola</p>
                     </div>
                     <div class="card-footer">
-                      <a href="https://www.linkedin.com/in/daniel-moreno-b7603b1b5/" target="_blank" class="btn btn-warning">Linkedin</a>
+                      <a href="https://www.linkedin.com/in/oscar-gonz%C3%A1lez-590474222/" target="_blank" class="btn btn-warning">Linkedin</a>
                     </div>
                 </div>
               </div>
@@ -100,7 +101,7 @@
                       <p class="card-text">Hola</p>
                     </div>
                     <div class="card-footer">
-                      <a href="https://www.linkedin.com/in/daniel-moreno-b7603b1b5/" target="_blank" class="btn btn-warning">Linkedin</a>
+                      <a href="https://www.linkedin.com/in/victor-soriano-calder%C3%B3n-0a22a6229/" target="_blank" class="btn btn-warning">Linkedin</a>
                     </div>
                 </div>
               </div>

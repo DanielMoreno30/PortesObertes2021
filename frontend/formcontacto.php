@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/bootstrap.min.css">
     <link rel="stylesheet" href="../style/navbaraboutus.css">
+    
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
     <link rel="icon"  href="../img/politecnicsico.png" type="image/png" />
     </head>
@@ -53,13 +54,28 @@
             <textarea class="form-control form-control-lg" name="mensaje" id="mensaje" rows="3" required></textarea>
           </div>
           <div class="col-md-12">
-            <button type="submit" name="submit" id="submit" value="submit" class="btn btn-primary btn-lg">Enviar Formulari</button>  
+            <button type="submit" name="submit" id="submit" value="submit" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modalformcontacto">Enviar Formulari</button>  
+            <button type="submit" name="cancel" id="cancel" value="cancel" class="btn btn-danger btn-lg">Cancel·lar</button>
           </div>
         </form>
     </div>
     </div>
 </section>
 <!---------------------------------------END FORMULARIO-------------------------------------->
+<!-- Modal -->
+<div class="modal fade" id="modalformcontacto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="position: fixed; z-index: 999999; text-align: center;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header alert alert-success">
+                <h5 class="modal-title" id="exampleModalLabel" style="font-size: 35px;">Formulari de Contacte</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Formulari de contacte enviat. Rebràs una resposta el més aviat possible.</p>
+            </div>
+        </div>
+	</div>
+</div>
 </body>
 <!-----------------FINAL BODY----------------->
 <!-----------------FOOTER----------------->  
