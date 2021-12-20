@@ -1,0 +1,55 @@
+body{
+    background-color: black;
+}
+.grid {
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    width: 560px;
+    height: 560px;
+    border: solid black;
+}
+  
+.grid div {
+    width: 20px;
+    height: 20px;
+}
+h3{
+    color: white;
+}
+
+.pac-dot {
+    background-image: url("./media/Escuela/lapiz.png");
+}
+
+.wall {
+    background-color: blue;
+}
+
+.power-pellet {
+    background-image: url("./media/Escuela/taza-de-cafe.png");
+}
+
+.blinky {
+    background-image: url("./media/Escuela/contrato.png");
+}
+
+.pinky {
+    background-image: url("./media/Escuela/contrato.png");
+}
+
+.inky {
+    background-image: url("./media/Escuela/trabajo.png");
+}
+
+.clyde {
+   background-image: url("./media/Escuela/trabajo.png");    
+}
+
+.pac-man {
+    background-image: url("./media/Escuela/estudiante.png");
+}
+
+.scared-ghost {
+    background-image: url("./media/Escuela/carta-a.png");
+}

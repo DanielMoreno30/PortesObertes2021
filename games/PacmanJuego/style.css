@@ -1,37 +1,56 @@
-body {
-  background-color: black;
+body{
+    background-color: black;
+}
+.grid {
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    width: 560px;
+    height: 560px;
+    border: solid black;
+}
+  
+.grid div {
+    width: 20px;
+    height: 20px;
+}
+h3{
+    color: white;
 }
 
-#pacman {
-  height: 470px;
-  width: 382px;
-  border-radius: 5px;
-  margin: 20px auto;
+.pac-dot {
+    background-image: url("./media/SemanSanta/cruzar.png");
 }
 
-#shim {
-  font-family: 'Assistant', sans-serif;
-  position: absolute;
-  visibility: hidden
+.wall {
+    background-color: blue;
 }
 
-h1 {
-  font-family: 'Assistant', sans-serif;
-  text-align: center;
-  color: yellow;
-}
-ul{
-  font-family: 'Assistant', sans-serif;
-  color: yellow;
-}
-body {
-  width: 342px;
-  margin: 0px auto;
-  font-family: 'Assistant', sans-serif;
+.power-pellet {
+    background-image: url("./media/SemanSanta/paloma.png");
 }
 
-
-a {
-  text-decoration: none;
-  color: #0000FF;
+.blinky {
+    background-image: url("./media/SemanSanta/casco-romano.png");
 }
+
+.pinky {
+    background-image: url("./media/SemanSanta/casco-romano.png");
+}
+
+.inky {
+    background-image: url("./media/SemanSanta/casco-romano.png");
+}
+
+.clyde {
+   background-image: url("./media/SemanSanta/casco-romano.png");    
+}
+
+.pac-man {
+    background-image: url("./media/SemanSanta/jesus.png");
+}
+
+.scared-ghost {
+    background-image: url("./media/SemanSanta/vino.png");
+}
+
