@@ -42,31 +42,28 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-            <form class="modal-content">
-            <div class="container">
-                <h1>Crear un nou usuari</h1>
-                <p>Escriu les teves dates per registrar-te.</p>
-            <hr>
+            <form class="modal-content" action="php_controllers/usuariosController.php" method="POST">
+                <div class="container">
+                    <h1>Crear un nou usuari</h1>
+                    <p>Escriu les teves dates per registrar-te.</p>
+                <hr>
                 <label for="nomusuari"><b>Nom Usuari</b></label>
-                <input type="text" class="inputs" placeholder="Escriu el teu Nom d'Usuari" name="nombre" required>
+                <input type="text" class="inputs" placeholder="Escriu el teu Nom d'Usuari" name="nombreUsuarioNuevo" required>
 
                 <label for="email"><b>Nom</b></label>
-                <input type="text" class="inputs" placeholder="Escriu el teu Nom" name="nombre" required>
+                <input type="text" class="inputs" placeholder="Escriu el teu Nom" name="nombreNuevo" required>
  
                 <label for="email"><b>Cognoms</b></label>
-                <input type="text" class="inputs" placeholder="Escriu el teus Cognoms" name="apellidos" required>
+                <input type="text" class="inputs" placeholder="Escriu el teus Cognoms" name="apellidosNuevos" required>
 
                 <label for="email"><b>Email</b></label>
-                <input type="text" class="inputs" placeholder="Escriu el teu Email" name="email" required>
+                <input type="text" class="inputs" placeholder="Escriu el teu Email" name="emailNuevo" required>
 
                 <label for="pass"><b>Contrasenya</b></label>
-                <input type="password" class="inputs" placeholder="Escriu la teva contrasenya" name="pass" required>
-
-                <label for="psw-repeat"><b>Repetir Contrasenya</b></label>
-                <input type="password" class="inputs" placeholder="Repeteix la contrasenya" name="pass-repetir" required>
+                <input type="password" class="inputs" placeholder="Escriu la teva contrasenya" name="passNueva" required>
 
                 <div class="clearfix">
-                    <button type="submit" class="signup">Crear Usuari</button>
+                    <button type="submit" name="registro" class="signup">Crear Usuari</button>
                 </div>
                 </div>
             </form>

@@ -57,20 +57,22 @@
           <h6 class="text-uppercase fw-bold mb-4">
             Enlaces
           </h6>
-          <p>
-          <a href="#!" class="text-reset"><i class="fab fa-github"></i> GitHub</a>
-          </p>
+          <a href="https://github.com/VSorianoABC123/1rProjecteDAW2b2122" target="_blank" style="color: inherit; text-decoration: none;"><i class="fab fa-github"></i> GitHub </a>
         </div>
 
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
           <h6 class="text-uppercase fw-bold mb-4">
-            Contacto
+            <?php echo $idioma['NavbarContacte'] ?>
           </h6>
-          <p><i class="fab fa-linkedin"></i> Sebas Angelov</p>
-          <p><i class="fab fa-linkedin"></i> Pablo Ferrer</p>
-          <p><i class="fab fa-linkedin"></i> Óscar Gonzalez</p>
-          <p><i class="fab fa-linkedin"></i> Daniel Moreno</p>
-		  <p><i class="fab fa-linkedin"></i> Victor Soriano</p>
+          <a href="https://www.linkedin.com/in/sebastiano-javier-georgiev-angelov-19b7a5214/" target="_blank" style="color: inherit; text-decoration: none;"><i class="fab fa-linkedin"></i> Sebas Angelov </a>
+          <br>
+          <a href="https://www.linkedin.com/in/pablo-ferrer-dalmau-arrizabalaga-2180aa204/" target="_blank" style="color: inherit; text-decoration: none;"><i class="fab fa-linkedin"></i> Pablo Ferrer </a>
+          <br>
+          <a href="https://www.linkedin.com/in/oscar-gonz%C3%A1lez-590474222/"target="_blank" style="color: inherit; text-decoration: none;"><i class="fab fa-linkedin"></i> Óscar Gonzalez </a>
+          <br>
+          <a href="https://www.linkedin.com/in/daniel-moreno-b7603b1b5/" target="_blank" style="color: inherit; text-decoration: none;"><i class="fab fa-linkedin"></i> Daniel Moreno </a>
+          <br>
+          <a href="https://www.linkedin.com/in/victor-soriano-calder%C3%B3n-0a22a6229/" target="_blank" style="color: inherit; text-decoration: none;"><i class="fab fa-linkedin"></i> Victor Soriano </a>
         </div>
       </div>
     </div>

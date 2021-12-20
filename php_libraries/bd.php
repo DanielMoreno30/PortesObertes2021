@@ -122,7 +122,11 @@
 
     //(FUNCIONA)
     //Función para seleccionar los usuarios por tipo:
+<<<<<<< HEAD
+    function selectUsuariosParaIS($correo, $contra)
+=======
     function selectUsuariosParaIS($correo)
+>>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
     {
         //Abrimos conexión:
         $conexion = abrirBd();
@@ -136,6 +140,17 @@
 
         $usuario = $sentenciaUsuario->fetch();
 
+<<<<<<< HEAD
+        if(isset($usuario))
+        {
+            if(!password_verify($contra, $usuario["password"]))
+            {
+               $usuario = null; 
+            }
+        }
+
+=======
+>>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
         //Cerramos conexión:
         $conexion = cerrarBd();
 

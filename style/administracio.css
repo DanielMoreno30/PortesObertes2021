@@ -1,4 +1,24 @@
 .highlight 
 {
     background-color: darkturquoise;
+<<<<<<< HEAD
+}
+
+.btnModal
+{
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
+.cardAdmin:hover
+{
+    transform: scale(0.95);
+}
+
+.iconAdmin:hover
+{
+    transform: scale(1.05);
+=======
+>>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
 }

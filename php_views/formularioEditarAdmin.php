@@ -25,7 +25,11 @@
     <link rel="stylesheet" href="../style/administracio.css">
 </head>
 <body class="overflow-hidden" style="font-family: 'Assistant'; height: 100vh;">
+<<<<<<< HEAD
+    <div class="container h-100 d-flex justify-content-center flex-column mt-3 mb-3">
+=======
     <div class="container-fluid d-flex justify-content-center flex-column mt-3 mb-3">
+>>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
         
         <!-- si hay mensajes o errores los mostramos y los quitamos de la sessión -->
         <?php
@@ -50,7 +54,11 @@
             <div class="card-body">
                 <form action="../php_controllers/usuariosController.php" class="d-block" method="POST" enctype="multipart/form-data">
                     <!--nombre de usuario-->
+<<<<<<< HEAD
+                    <!-- si habia un administrador guardado en la sesión recuperamos el valor y lo ponemos en el formulario -->
+=======
                     <!-- si habia un pokemon guardado en la sesión recuperamos el valor y lo ponemos en el formulario -->
+>>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
                     <div class="mb-3 row">
                         <label for="nombreUsuario" class="col-sm-2 col-form-label">Nom d'usuari </label>
                         <div class="col-sm-10">
@@ -60,6 +68,10 @@
                     </div>
 
                     <!-- contrassenya -->
+<<<<<<< HEAD
+                    <!-- si habia un administrador guardado en la sesión recuperamos el valor y lo ponemos en el formulario -->
+=======
+>>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
                     <div class="mb-3 row">
                         <label for="contra" class="col-sm-2 col-form-label">Contrassenya </label>
                         <div class="col-sm-10">
@@ -69,6 +81,10 @@
                     </div>
 
                     <!--nombre-->
+<<<<<<< HEAD
+                    <!-- si habia un administrador guardado en la sesión recuperamos el valor y lo ponemos en el formulario -->
+=======
+>>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
                     <div class="mb-3 row">
                         <label for="nombre" class="col-sm-2 col-form-label">Nom </label>
                         <div class="col-sm-10">
@@ -78,6 +94,10 @@
                     </div>
 
                     <!-- apellidos -->
+<<<<<<< HEAD
+                    <!-- si habia un administrador guardado en la sesión recuperamos el valor y lo ponemos en el formulario -->
+=======
+>>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
                     <div class="mb-3 row">
                         <label for="apellidos" class="col-sm-2 col-form-label">Cognoms </label>
                         <div class="col-sm-10">
@@ -87,6 +107,10 @@
                     </div>
 
                     <!-- correo -->
+<<<<<<< HEAD
+                    <!-- si habia un administrador guardado en la sesión recuperamos el valor y lo ponemos en el formulario -->
+=======
+>>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
                     <div class="mb-3 row">
                         <label for="correo" class="col-sm-2 col-form-label">Correu </label>
                         <div class="col-sm-10">
@@ -96,6 +120,10 @@
                     </div>
 
                     <!-- tipo -->
+<<<<<<< HEAD
+                    <!-- si habia un administrador guardado en la sesión recuperamos el valor y lo ponemos en el formulario -->
+=======
+>>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
                     <div class="mb-3 row">
                         <label class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
@@ -111,7 +139,11 @@
                     <div class="d-flex justify-content-end">
                         <a href="../frontend/administracioAdmin.php" class="btn btn-secondary" role="button" aria-pressed="true">Cancelar</a>
                         <input type="submit" class="btn btn-primary ms-2" name="modificarAdmin" value="Aceptar">
+<<<<<<< HEAD
+                        <input id="numeroOcultoModificarAdmin" type="hidden" name="numeroOcultoModificarAdmin" value="<?php if(isset($usuario['id_usuario'])){ echo $usuario['id_usuario']; } ?>">
+=======
                         <input id="numeroOcultoModificar" type="hidden" name="numeroOcultoModificar" value="<?php if(isset($usuario['id_usuario'])){ echo $usuario['id_usuario']; } ?>">
+>>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
                     </div>
                 </form>
             </div>

@@ -34,6 +34,48 @@
         <div class="container h-100">
             <div class="container-fluid d-flex justify-content-end mb-3">
                 <form action="../php_controllers/usuariosController.php" method="POST">
+<<<<<<< HEAD
+                    <button id="btnEditarUsuario" type="submit" name="editarUsuario" class="btn shadow-none" style="cursor: pointer; text-decoration: none;" disabled>
+                        <i class="fas fa-user-edit fa-3x me-5 iconAdmin"></i>
+                    </button>
+                    <input id="numeroOcultoEditar2" type="hidden" name="numeroOcultoEditar2" value="">
+                </form>
+                <!-- Button trigger modal -->
+                <button id="btnBorrarUsuario" type="button" class="btn shadow-none me-5" style="cursor: pointer; text-decoration: none;" data-toggle="modal" data-target="#exampleModal" disabled>
+                    <i class="fas fa-user-minus fa-3x iconAdmin"></i>
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title fs-3" id="exampleModalLabel">Confirmació</h5>
+                                <button class="btnModal" data-dismiss="modal">
+                                    <i class="fas fa-window-close"></i>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="../php_controllers/usuariosController.php" method="POST">
+                                    <button type="submit" name="borrarUsuario" class="btn shadow-none fs-4" style="cursor: pointer; text-decoration: none;">
+                                        Estás segur que vols eliminar?
+                                    </button>
+                                    <input id="numeroOculto" type="hidden" name="numeroOcultoBorrar" value="">
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <form action="../php_controllers/usuariosController.php" method="POST">
+                                    <button type="button" class="btn btn-secondary fs-4" data-dismiss="modal">Cancelar</button>
+                                    <button type="submit" name="borrarUsuario" class="btn btn-primary shadow-none fs-4" style="cursor: pointer; text-decoration: none;">
+                                        Aceptar
+                                    </button>
+                                    <input id="numeroOculto" type="hidden" name="numeroOcultoBorrar" value="">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+=======
                     <button type="submit" name="borrarUsuario" class="btn" style="cursor: pointer; text-decoration: none;">
                         <i class="fas fa-user-minus fa-3x"></i>
                     </button>
@@ -45,6 +87,7 @@
                     </button>
                     <input id="numeroOcultoEditar2" type="hidden" name="numeroOcultoEditar2" value="">
                 </form>
+>>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
             </div>
             <div class="container-fluid">
                 <table id="tablaUsuarios" class="table bg-dark" style="height: 100%;">

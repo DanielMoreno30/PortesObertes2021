@@ -24,56 +24,56 @@
   <section class="memory-game" id="memory-game">
     <div class="card" data-framework="css">
       <img class="partedelantera" src="img/css.png" alt="CSS" width="100" height="50"/>
-      <img class="partetrasera" src="img/memorylogo.png" alt="MemoryLogo"/>
+      <img class="partetrasera" src="img/arbolnavidad.png" alt="MemoryLogo"/>
     </div>
     <div class="card" data-framework="css">
 	  <img class="partedelantera" src="img/css.png" alt="CSS" width="100" height="50"/>
-      <img class="partetrasera" src="img/memorylogo.png" alt="MemoryLogo"/>
+      <img class="partetrasera" src="img/arbolnavidad.png" alt="MemoryLogo"/>
     </div>
 
     <div class="card" data-framework="vue">
       <img class="partedelantera" src="img/vue.png" alt="Vue" width="100" height="50"/>
-      <img class="partetrasera" src="img/memorylogo.png" alt="MemoryLogo"/>
+      <img class="partetrasera" src="img/arbolnavidad.png" alt="MemoryLogo"/>
     </div>
     <div class="card" data-framework="vue">
 	  <img class="partedelantera" src="img/vue.png" alt="Vue" width="100" height="50"/>
-      <img class="partetrasera" src="img/memorylogo.png" alt="MemoryLogo"/>
+      <img class="partetrasera" src="img/arbolnavidad.png" alt="MemoryLogo"/>
     </div>
 
     <div class="card" data-framework="angular">
       <img class="partedelantera" src="img/angular.png" alt="Angular" width="100" height="50"/>
-      <img class="partetrasera" src="img/memorylogo.png" alt="MemoryLogo"/>
+      <img class="partetrasera" src="img/arbolnavidad.png" alt="MemoryLogo"/>
     </div>
     <div class="card" data-framework="angular">
 	  <img class="partedelantera" src="img/angular.png" alt="Angular" width="100" height="50"/>
-	  <img class="partetrasera" src="img/memorylogo.png" alt="MemoryLogo"/>
+	  <img class="partetrasera" src="img/arbolnavidad.png" alt="MemoryLogo"/>
     </div>
 
     <div class="card" data-framework="ionic">
       <img class="partedelantera" src="img/ionic.png" alt="Ionic" width="100" height="50"/>
-      <img class="partetrasera" src="img/memorylogo.png" alt="MemoryLogo"/>
+      <img class="partetrasera" src="img/arbolnavidad.png" alt="MemoryLogo"/>
     </div>
     <div class="card" data-framework="ionic">
 	  <img class="partedelantera" src="img/ionic.png" alt="Ionic" width="100" height="50"/>
-	  <img class="partetrasera" src="img/memorylogo.png" alt="MemoryLogo"/>
+	  <img class="partetrasera" src="img/arbolnavidad.png" alt="MemoryLogo"/>
 	</div>
 
     <div class="card" data-framework="javascript">
 	  <img class="partedelantera" src="img/javascript.png" alt="JavaScript" width="100" height="50"/>
-	  <img class="partetrasera" src="img/memorylogo.png" alt="MemoryLogo"/>
+	  <img class="partetrasera" src="img/arbolnavidad.png" alt="MemoryLogo"/>
 	</div>
 	<div class="card" data-framework="javascript">
 	  <img class="partedelantera" src="img/javascript.png" alt="JavaScript" width="100" height="50"/>
-      <img class="partetrasera" src="img/memorylogo.png" alt="MemoryLogo"/>
+      <img class="partetrasera" src="img/arbolnavidad.png" alt="MemoryLogo"/>
 	</div>
 
     <div class="card" data-framework="react">
       <img class="partedelantera" src="img/react.png" alt="React" width="100" height="50"/>
-      <img class="partetrasera" src="img/memorylogo.png" alt="MemoryLogo"/>
+      <img class="partetrasera" src="img/arbolnavidad.png" alt="MemoryLogo"/>
     </div>
     <div class="card" data-framework="react">
 		<img class="partedelantera" src="img/react.png" alt="React" width="100" height="50"/>
-		<img class="partetrasera" src="img/memorylogo.png" alt="MemoryLogo"/>
+		<img class="partetrasera" src="img/arbolnavidad.png" alt="MemoryLogo"/>
 	</div>
   </section>
 

@@ -121,7 +121,23 @@
                         <?php
                                 }
                                 else
+<<<<<<< HEAD
+                                {   
+                                    $encontrado = false;
+
+                                    foreach ($juegosJugados as $juegoJugado) 
+                                    {
+                                        if($juegoJugado["juego_id"] == $juego["id"])
+                                        {
+                                            $encontrado = true;
+                                        }
+                                    }
+
+                                    if($encontrado)
+                                    {      
+=======
                                 {
+>>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
                         ?>
                                     <div class="carousel-item">
                                         <a href="<?php echo $juego["url_juego"] ?>" type="button">
@@ -129,6 +145,20 @@
                                         </a>
                                     </div>
                         <?php
+<<<<<<< HEAD
+                                    }
+                                    else
+                                    {
+                        ?>
+                                    <div class="carousel-item" style="filter: saturate(0); pointer-events: none; cursor: default;">
+                                        <a href="<?php echo $juego["url_juego"] ?>" type="button" disabled>
+                                            <img src="<?php echo $juego["url_imagen"] ?>" class="d-block w-100" alt="..." height="400px">
+                                        </a>
+                                    </div> 
+                        <?php
+                                    }
+=======
+>>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
                                 }
                             }
                         ?>
@@ -218,5 +248,6 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
   <script type="text/javascript" src="../js/navbar.js"></script>
   <script src="https://kit.fontawesome.com/668120ee8a.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../js/games.js"></script>
 </body>
 </html>

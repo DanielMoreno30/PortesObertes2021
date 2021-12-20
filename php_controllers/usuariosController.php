@@ -3,6 +3,14 @@
     require_once("../php_libraries/bd.php");
     session_start();
 
+<<<<<<< HEAD
+    /*-----------------------------------------------------------------------------------------------------------------------------------*/
+
+    //INSERT ADMINISTRADOR, BORRAR ADMINISTRADOR, EDITAR ADMINISTRADOR Y MODIFICAR ADMINISTRADOR
+
+    /*-----------------------------------------------------------------------------------------------------------------------------------*/
+=======
+>>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
     if(isset($_POST["insertarAdmin"]))
     {
         insertUsuario($_POST["nombreUsuario"], $_POST["contra"], $_POST["nombre"], 
@@ -55,12 +63,20 @@
 
         if($_POST["checkTipo"][0] == 'A')
         {
+<<<<<<< HEAD
+            modificarUsuario($_POST["numeroOcultoModificarAdmin"], $_POST["nombreUsuario"], $_POST["contra"], $_POST["nombre"], 
+=======
             modificarUsuario($_POST["numeroOcultoModificar"], $_POST["nombreUsuario"], $_POST["contra"], $_POST["nombre"], 
+>>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
             $_POST["apellidos"], $_POST["correo"], 'A');
         }
         else
         {
+<<<<<<< HEAD
+            modificarUsuario($_POST["numeroOcultoModificarAdmin"], $_POST["nombreUsuario"], $_POST["contra"], $_POST["nombre"], 
+=======
             modificarUsuario($_POST["numeroOcultoModificar"], $_POST["nombreUsuario"], $_POST["contra"], $_POST["nombre"], 
+>>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
             $_POST["apellidos"], $_POST["correo"], 'N');
         }
 
@@ -71,14 +87,32 @@
         }
         else
         {
+<<<<<<< HEAD
+            $_SESSION["datosAdmin"] = crearUsuario2($_POST["numeroOcultoModificarAdmin"], $_POST["nombreUsuario"], $_POST["contra"], $_POST["nombre"], 
+=======
             $_SESSION["datosAdmin"] = crearUsuario2($_POST["numeroOcultoModificar"], $_POST["nombreUsuario"], $_POST["contra"], $_POST["nombre"], 
+>>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
             $_POST["apellidos"], $_POST["correo"], 'A');
 
             header('Location: ' . "../php_views/formularioEditarAdmin.php");
             exit();
         }
     }
+<<<<<<< HEAD
+    /*-----------------------------------------------------------------------------------------------------------------------------------*/
 
+    //FIN INSERT ADMINISTRADOR, BORRAR ADMINISTRADOR, EDITAR ADMINISTRADOR Y MODIFICAR ADMINISTRADOR
+
+    /*-----------------------------------------------------------------------------------------------------------------------------------*/
+
+    /*-----------------------------------------------------------------------------------------------------------------------------------*/
+
+    //BORRAR USUARIO, EDITAR USUARIOY MODIFICAR USUARIO
+
+    /*-----------------------------------------------------------------------------------------------------------------------------------*/
+=======
+
+>>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
     if(isset($_POST["borrarUsuario"]))
     {
         if(isset($_POST["numeroOcultoBorrar"]))
@@ -113,12 +147,20 @@
 
         if($_POST["checkTipo"][0] == 'A')
         {
+<<<<<<< HEAD
+            modificarUsuario($_POST["numeroOcultoModificarUsuario"], $_POST["nombreUsuario"], $_POST["contra"], $_POST["nombre"], 
+=======
             modificarUsuario($_POST["numeroOcultoModificar"], $_POST["nombreUsuario"], $_POST["contra"], $_POST["nombre"], 
+>>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
             $_POST["apellidos"], $_POST["correo"], 'A');
         }
         else
         {
+<<<<<<< HEAD
+            modificarUsuario($_POST["numeroOcultoModificarUsuario"], $_POST["nombreUsuario"], $_POST["contra"], $_POST["nombre"], 
+=======
             modificarUsuario($_POST["numeroOcultoModificar"], $_POST["nombreUsuario"], $_POST["contra"], $_POST["nombre"], 
+>>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
             $_POST["apellidos"], $_POST["correo"], 'N');
         }
 
@@ -129,17 +171,38 @@
         }
         else
         {
+<<<<<<< HEAD
+            $_SESSION["datosUsuario"] = crearUsuario2($_POST["numeroOcultoModificarUsuario"], $_POST["nombreUsuario"], $_POST["contra"], $_POST["nombre"], 
+=======
             $_SESSION["datosUsuario"] = crearUsuario2($_POST["numeroOcultoModificar"], $_POST["nombreUsuario"], $_POST["contra"], $_POST["nombre"], 
+>>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
             $_POST["apellidos"], $_POST["correo"], 'A');
 
             header('Location: ' . "../php_views/formularioEditarUsuario.php");
             exit();
         }
     }
+<<<<<<< HEAD
+    /*-----------------------------------------------------------------------------------------------------------------------------------*/
+
+    //FIN BORRAR USUARIO, EDITAR USUARIOY MODIFICAR USUARIO
+
+    /*-----------------------------------------------------------------------------------------------------------------------------------*/
+
+    /*-----------------------------------------------------------------------------------------------------------------------------------*/
+
+    //MODAL INICIAR SESION
+
+    /*-----------------------------------------------------------------------------------------------------------------------------------*/
+    if(isset($_POST["iniciarSesion"]))
+    {
+        $usuario = selectUsuariosParaIS($_POST["email"], $_POST["pass"]);
+=======
 
     if(isset($_POST["iniciarSesion"]))
     {
         $usuario = selectUsuariosParaIS($_POST["email"]);
+>>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
 
         if($usuario == null)
         {
@@ -149,8 +212,39 @@
         else
         {
             $_SESSION["idIS"] = $usuario;
+<<<<<<< HEAD
+
+=======
+>>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
             header('Location: ' . "../index.php");
             exit();
         }
     }
+<<<<<<< HEAD
+    /*-----------------------------------------------------------------------------------------------------------------------------------*/
+
+    //FIN MODAL INICIAR SESION
+
+    /*-----------------------------------------------------------------------------------------------------------------------------------*/
+
+    /*-----------------------------------------------------------------------------------------------------------------------------------*/
+
+    //MODAL REGISTRO
+
+    /*-----------------------------------------------------------------------------------------------------------------------------------*/
+    if(isset($_POST["registro"]))
+    {
+        insertUsuario($_POST["nombreUsuarioNuevo"], $_POST["passNueva"], $_POST["nombreNuevo"], 
+        $_POST["apellidosNuevos"], $_POST["emailNuevo"], 'N');
+
+        header('Location: ' . "../index.php");
+        exit();
+    }
+    /*-----------------------------------------------------------------------------------------------------------------------------------*/
+
+    //FIN MODAL REGISTRO
+
+    /*-----------------------------------------------------------------------------------------------------------------------------------*/
+=======
+>>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
 ?>

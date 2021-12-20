@@ -1,4 +1,8 @@
 <?php
+<<<<<<< HEAD
+    include "../php_controllers/configuracionIdiomas.php";
+=======
+>>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
     require_once("../php_libraries/bd.php");
     session_start();
 ?>
@@ -39,23 +43,23 @@
         <div class="container mt-5" style="width: 80%;">
         <form action="phpmailer.php" class="row g-3" method="POST">
           <div class="col-md-6">
-            <label for="nombre" class="form-label">Nom</label>
+            <label for="nombre" class="form-label"><?php echo $idioma['ContacteNom'] ?></label>
             <input type="text" class="form-control form-control-lg" name="nombre" id="nombre" required>
           </div>
           <div class="col-md-6">
-            <label for="apellidos" class="form-label">Cognoms</label>
+            <label for="apellidos" class="form-label"><?php echo $idioma['ContacteCognoms'] ?></label>
             <input type="text" class="form-control form-control-lg" name="apellidos" id="apellidos" required>
           </div>
           <div class="col-md-8">
-            <label for="email" class="form-label">E-mail</label>
+            <label for="email" class="form-label"><?php echo $idioma['ContacteEmail'] ?></label>
             <input type="email" class="form-control form-control-lg" id="email" name="email" required>
           </div>
           <div class="col-md-4">
-            <label for="telefono" class="form-label">Telèfon</label>
+            <label for="telefono" class="form-label"><?php echo $idioma['ContacteTelefon'] ?></label>
             <input type="text" class="form-control form-control-lg" name="telefono" id="telefono" placeholder="+34    623 785 999">
           </div>
           <div class="col-md-12">
-            <label for="mensaje" class="form-label">¿Què passa?</label>
+            <label for="mensaje" class="form-label"><?php echo $idioma['ContacteQuePassa'] ?></label>
             <textarea class="form-control form-control-lg" name="mensaje" id="mensaje" rows="3" required></textarea>
           </div>
           <div class="col-md-12">
@@ -92,7 +96,6 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="js/navbar.js"></script>
-  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script src="../js/navbar.js"></script>
   <script src="https://kit.fontawesome.com/668120ee8a.js" crossorigin="anonymous"></script>
 </html>

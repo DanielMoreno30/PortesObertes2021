@@ -1,8 +1,15 @@
 <?php
+<<<<<<< HEAD
+    include "../php_controllers/configuracionIdiomas.php";
+    require_once("../php_libraries/bd.php");
+    session_start();
+?>
+=======
     require_once("../php_libraries/bd.php");
     session_start();
 ?>
 
+>>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -16,7 +23,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/bootstrap.min.css">
     <link rel="stylesheet" href="../style/navbaraboutus.css">
-    <link rel="stylesheet" href="../style/login.css">
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
     <link rel="icon"  href="../img/politecnicsico.png" type="image/png" />
 </head>
@@ -28,20 +34,17 @@
     include 'navbarfija.php';
 ?>
 <!---------------------------------------FINAL NAVBAR-------------------------------------->
-      <section id="content" class="content">
+    <section id="content" class="content">
       <div class="container">
         <header class="jumbotron my-4">
           <center>
-            <h1 style="color: #0089ff; font-family: 'Montserrat'; letter-spacing: 10px;" class="display-3">SOBRE NOSALTRES</h1>
+            <h1 style="color: #0089ff; font-family: 'Montserrat'; letter-spacing: 10px;" class="display-3"><?php echo $idioma['NavbarSobre'] ?></h1>
             <p class="lead" style="font-size: 15px">
-            ¡Hola! De part de els integrants del grupo us presentem la nostra pàgina de Portes Obertes
-            on podeu veure els jocs que hem creat cadascun i la pàgina que hem creat treballant junts.
-            Esperem que la disfruteu tant com dedicació hem posat nosaltres perque surti a la llum.
-            Sort amb les vostres decisions, i posteriorment amb els vostres estudis.
+            <?php echo $idioma['AboutUsMainText'] ?>
             <br>
             <br>
             </p>
-            <p class="fw-bold" style="font-size: 25px">Integrants del GRUP 2</p>
+            <p class="fw-bold" style="font-size: 25px"><?php echo $idioma['AboutUsIntegrants'] ?></p>
           </center>
         </header>
 <!---------------------------------------CARDS-------------------------------------->
@@ -122,10 +125,10 @@
 ?>
 <!-----------------FINAL FOOTER----------------->  
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="js/navbar.js"></script>
+  <script src="../js/navbar.js"></script>
   <script src="https://kit.fontawesome.com/668120ee8a.js" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -50,7 +50,7 @@
 	box-shadow: 5px 5px 5px #888888;
 	width: 200px;
 	height: 100px;
-	background: #2069a5;
+	background: #5564eb;
 }
 
   .temporizador {
@@ -64,7 +64,7 @@
 	box-shadow: 5px 5px 5px #888888;
 	width: 200px;
 	height: 100px;
-	background: #2069a5;
+	background: #5564eb;
 }
 
   .botonempezarjuego {
@@ -75,13 +75,13 @@
 	border-bottom: 5px solid #b8b8b8;
 	border-radius: 12px;
 	box-shadow: 6px 6px 6px #888888 ;
-	color: #2069a5;
+	color: #094293;
 	display: block;  
 	font-family: 'Assistant';
 	font-size: 25px;
 	text-align: center !important;
 	width: 200px;
-	border-color: #2069a5;
+	border-color: #094293;
 	border-style: solid;
   }
 
@@ -105,7 +105,7 @@
 	transition: transform .5s;
 	box-shadow: 1px 1px 1px rgba(0,0,0,.3);
 	border-radius: 5px;
-	background: #2069a5;
+	background: #094293;
   }
   
   .memory-card:active {
@@ -125,7 +125,7 @@
 	padding: 10px;
 	position: absolute;
 	border-radius: 5px;
-	background: #2069a5;
+	background: #094293;
 	backface-visibility: hidden;
   }
   

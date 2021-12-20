@@ -1,8 +1,15 @@
 <?php
+<<<<<<< HEAD
+    include "php_controllers/configuracionIdiomas.php";
+    require_once("php_libraries/bd.php");
+    session_start();
+?>
+=======
     require_once("php_libraries/bd.php");
     session_start();
 ?>
 
+>>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
 <!DOCTYPE html>
 <html lang="esp">
 
@@ -11,7 +18,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="HandheldFriendly" content="true">
-  <title>Portes Obertes</title>
+  <title><?php echo $idioma['titol'] ?></title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,7 +64,7 @@
         <span class="visually-hidden">Seguent</span>
       </button>
       <div class="position-absolute top-50 start-50 translate-middle-x">
-        <p class="tituloCarousel">Us donem la benvinguda al Politècnics!</p>
+        <p class="tituloCarousel"><?php echo $idioma['titolCar'] ?></p>
       </div>
 
       <!-- COLOR FLECHA 9C9C9C -->
@@ -78,13 +85,13 @@
           <!-----------------PARRAFO INICIAL ---------------->
           <div class="col-md-5">
             <p>
-              Al Centre d’Estudis Politècnics impartim cicles formatius de grau mitjà i grau superior de les especialitats de comerç i màrqueting, d’administració i finances, d’informàtica, i de turisme i gestió d’esdeveniments.
+              <?php echo $idioma['pIndex1'] ?>
             </p>
             <p>
-              La nostra missió és el creixement de l’alumnat. Vetllem per l’assoliment de les seves competències professionals i habilitats personals que les empreses, en particular, i la societat, en general, demanden.
+              <?php echo $idioma['pIndex2'] ?>
             </p>
             <p>
-              L’objectiu del Politècnics és convertir-nos en un centre de Formació Professional de referència a Catalunya.
+              <?php echo $idioma['pIndex3'] ?>
             </p>
           </div>
           <div class="col-md-2">
@@ -106,17 +113,14 @@
         <div class="row">
           <div class="col-md-5">
             <p>
-              Al Politècnics considerem la FRASE com les capacitats transversals que afecten a diferents llocs de treball i que
-              són transferibles a noves i diferents situacions de l’àmbit personal i professional.
+              <?php echo $idioma['pFrase1'] ?>
             </p>
             <p>
-              Entre aquestes capacitats destaquen les d&#39;autonomia, innovació, organització del treball, responsabilitat, relació interpersonal, treball en
-              equip i resolució de problemes.
+              <?php echo $idioma['pFrase2'] ?>
             </p>
                   
             <p>
-              Al Politècnics resumim totes aquestes capacitats en cinc objectius que formen els pilars de la nostra FRASE:
-              Flexibilitat, Responsabilitat, Autonomia, Sociabilitat i Evolució.
+              <?php echo $idioma['pFrase3'] ?>
             </p>
           </div>
           <div class="col-md-2">
@@ -131,23 +135,23 @@
       <hr class="bg-primary border-3 border-top m-5 border-primary">
       <!-----------------PARRAFO "QUE M'INTERESSA"---------------->
       <div class="container" id="inicioFrase">
-        <h1 style="font-family: 'Montserrat'; color: #0089ff; text-align:center; letter-spacing: 10px;" class="display-3">QUÉ M'INTERESSA?</h1>
+        <h1 style="font-family: 'Montserrat'; color: #0089ff; text-align:center; letter-spacing: 10px;" class="display-3"><?php echo $idioma['interes'] ?></h1>
         <div class="row">
           <!-----------------NO TINC NI IDEA---------------->
           <div class="col-md-4">
             <div class="p-5">
-              <h3 style="text-align:center; font-size: 18px;" class="display-8">No tinc ni idea...</h3>
+              <h3 style="text-align:center; font-size: 18px;" class="display-8"><?php echo $idioma['idea'] ?></h3>
             </div>
             <div class= "p-5"> 
               <img src="./img/noTincNiIdea.jpg" class="imgOrientacio" width="200" height="auto" alt="fraseImg"> </div>
             <p style="text-align: center;">
-              Al CEP oferim cursos molt variats. T'interessará coneixer més de les nostres opcions abans de profunditzar en la especialitat.
+              <?php echo $idioma['pIdea'] ?>
             </p>
           </div>
           <!-----------------SE QUINA RAMA VULL---------------->
           <div class="col-md-4">
             <div class="p-5">
-              <h3 style="text-align:center; font-size: 18px;" class="display-8">Sé quina rama vull!</h3>
+              <h3 style="text-align:center; font-size: 18px;" class="display-8"><?php echo $idioma['branca'] ?></h3>
             </div>
 
             <div class="p-5" style="text-align: center;"> <img src="./img/seQuinaRamaVull.jpg" class="imgOrientacio" width="200" height="auto" alt="fraseImg"> </div>
@@ -155,26 +159,26 @@
 
             <div class="container" style="text-align:center">
               <div class="row offset-md-2">
-                <div class="bg-danger col-12 col-md-5  m-2 " style="color:white; font-size:12px;">Comerç <br> Màrqueting <br></div>
+                <div class="bg-danger col-12 col-md-5  m-2 " style="color:white; font-size:12px;"><?php echo $idioma['comerç'] ?></div>
 
-                <div class="bg-primary col-12 col-md-5 m-2" style="color:white; font-size:12px;">Hoteleria <br> Turisme <br></div>                
-                <div class="bg-warning col-12 col-md-5 m-2" style="color:white; font-size:12px;">Informàtica <br> Comunicacions <br></div>
+                <div class="bg-primary col-12 col-md-5 m-2" style="color:white; font-size:12px;"><?php echo $idioma['hosteleria'] ?></div>                
+                <div class="bg-warning col-12 col-md-5 m-2" style="color:white; font-size:12px;"><?php echo $idioma['informàtica'] ?></div>
 
-                <div class="bg-success col-12 col-md-5 m-2  " style="color:white; font-size:12px;" href="./frontend/cursos.php#familiaIC">Administració <br> Gestió <br>
+                <div class="bg-success col-12 col-md-5 m-2  " style="color:white; font-size:12px;" href="./frontend/cursos.php#familiaIC"><?php echo $idioma['gestió'] ?>
                 </div>
               </div>
             </div>
           </div>
           <!-----------------TINC CLAR EL CURS---------------->
           <div class="col-md-4 text-center">
-            <div class="p-5"><h3 class="display-8" style="text-align:center; font-size: 18px;">Tinc clar el curs.</h3></div>
+            <div class="p-5"><h3 class="display-8" style="text-align:center; font-size: 18px;"><?php echo $idioma['clar'] ?></h3></div>
             <div class="p-5"> 
               <img src="./img/tincClarElCurs.jpg" class="imgOrientacio" width="200" height="auto" alt="fraseImg"> 
             </div>
 
             <div class="dropdown" >
             <div class="offset-3 col-6 text-center ">
-              <button style="font-size: 15px;" class="btn btn-lg btn-secondary dropdown-toggle btn-success align-self-center" type="button" id="brnListaCursos" data-bs-toggle="dropdown" aria-expanded="false">Cursos...</button>
+              <button style="font-size: 15px;" class="btn btn-lg btn-secondary dropdown-toggle btn-success align-self-center" type="button" id="brnListaCursos" data-bs-toggle="dropdown" aria-expanded="false"><?php echo $idioma['cursos'] ?></button>
                 <!-- <button type="btn btn-secondary dropdown-toggle" id="brnListaCursos" class="btn btn-lg btn-success" style="font-size:15px">Escollir...</button> -->
                 <script>
                   document.getElementById("brnListaCursos").addEventListener("click", myFunction);
@@ -192,17 +196,17 @@
                 <div id="listaCursos" class="FixedHeightContainer" style="position: relative; left: 50%; transform: translate(-50%); visibility:hidden;">
                   <div class="Content" style="font-size: 15px;">
                     
-                    <a style="color:black" href="./frontend/cursos.php#familiaCM" class="nav-item nav-link">GM Activitats Comercials</a>
-                    <a style="color:black" href="./frontend/cursos.php#familiaCM" class="nav-item nav-link">GS Màrqueting i Publicitat</a>
-                    <a style="color:black" href="./frontend/cursos.php#familiaCM" class="nav-item nav-link">GS Gestió de Vendes i Espais Comercials</a>
-                    <a style="color:black" href="./frontend/cursos.php#familiaCM" class="nav-item nav-link">GS Comerç Internacional</a>
-                    <a style="color:black" href="./frontend/cursos.php#familiaHT" class="nav-item nav-link">GS Agències de Viatges i Gestió d’Esdeveniment</a>
-                    <a style="color:black" href="./frontend/cursos.php#familiaIC" class="nav-item nav-link">GM Sistemes Microinformàtics i Xarxes</a>
-                    <a style="color:black" href="./frontend/cursos.php#familiaIC" class="nav-item nav-link">GS Desenvolupament Aplicacions Web</a>
-                    <a style="color:black" href="./frontend/cursos.php#familiaIC" class="nav-item nav-link">GS Desenvolupament Aplicacions Multiplataforma</a>
-                    <a style="color:black" href="./frontend/cursos.php#familiaAG" class="nav-item nav-link">GM Gestió Administrativa</a>
-                    <a style="color:black" href="./frontend/cursos.php#familiaAG" class="nav-item nav-link">GS Administració i Finances</a>
-                    <a style="color:black" href="./frontend/cursos.php#familiaAG" class="nav-item nav-link">GS Assistència a la Direcció</a>
+                    <a style="color:black" href="./frontend/cursos.php#familiaCM" class="nav-item nav-link"><?php echo $idioma['GMActivitats'] ?></a>
+                    <a style="color:black" href="./frontend/cursos.php#familiaCM" class="nav-item nav-link"><?php echo $idioma['GSMarqueting'] ?></a>
+                    <a style="color:black" href="./frontend/cursos.php#familiaCM" class="nav-item nav-link"><?php echo $idioma['GSGestioV'] ?></a>
+                    <a style="color:black" href="./frontend/cursos.php#familiaCM" class="nav-item nav-link"><?php echo $idioma['GSComerç'] ?></a>
+                    <a style="color:black" href="./frontend/cursos.php#familiaHT" class="nav-item nav-link"><?php echo $idioma['GSAgencies'] ?></a>
+                    <a style="color:black" href="./frontend/cursos.php#familiaIC" class="nav-item nav-link"><?php echo $idioma['GMSistemes'] ?></a>
+                    <a style="color:black" href="./frontend/cursos.php#familiaIC" class="nav-item nav-link"><?php echo $idioma['GSWeb'] ?></a>
+                    <a style="color:black" href="./frontend/cursos.php#familiaIC" class="nav-item nav-link"><?php echo $idioma['GSMulti'] ?></a>
+                    <a style="color:black" href="./frontend/cursos.php#familiaAG" class="nav-item nav-link"><?php echo $idioma['GMGestioA'] ?></a>
+                    <a style="color:black" href="./frontend/cursos.php#familiaAG" class="nav-item nav-link"><?php echo $idioma['GSAdmin'] ?></a>
+                    <a style="color:black" href="./frontend/cursos.php#familiaAG" class="nav-item nav-link"><?php echo $idioma['GSAssistencia'] ?></a>
                     
 
 
