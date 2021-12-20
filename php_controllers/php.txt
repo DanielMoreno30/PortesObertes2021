@@ -1,0 +1,30 @@
+            <?php 
+              switch ($_SERVER['PHP_SELF']) {
+                case "/1RPROJECTEDAW2B2122/FRONTEND/ABOUTUS.PHP":
+                  ?>
+                  console.log("dfgsd");
+                  <a href="aboutus.php?idioma=es"> <?php echo $idioma['es'] ?> </a> <br> <a href="aboutus.php?idioma=en"> <?php echo $idioma['en'] ?></a> <br> <a href="aboutus.php?idioma=cat"> <?php echo $idioma['cat'] ?> </a></p>
+                  <?php 
+                  break;
+                case "/1RPROJECTEDAW2B2122/FRONTEND/GAMES.PHP":
+                  ?>
+                  <a href="games.php?idioma=es"> <?php echo $idioma['es'] ?> </a> <br> <a href="games.php?idioma=en"> <?php echo $idioma['en'] ?></a> <br> <a href="games.php?idioma=cat"> <?php echo $idioma['cat'] ?> </a></p>
+                  <?php 
+                  break;
+                case "/1RPROJECTEDAW2B2122/FRONTEND/CURSOS.PHP":
+                  ?>
+                  <a href="cursos.php?idioma=es"> <?php echo $idioma['es'] ?> </a> <br> <a href="cursos.php?idioma=en"> <?php echo $idioma['en'] ?></a> <br> <a href="cursos.php?idioma=cat"> <?php echo $idioma['cat'] ?> </a></p>
+                  <?php 
+                  break;
+                case "/1RPROJECTEDAW2B2122/FRONTEND/FORMCONTACTO.PHP":
+                  ?>
+                  <a href="formcontacto.php?idioma=es"> <?php echo $idioma['es'] ?> </a> <br> <a href="formcontacto.php?idioma=en"> <?php echo $idioma['en'] ?></a> <br> <a href="formcontacto.php?idioma=cat"> <?php echo $idioma['cat'] ?> </a></p>
+                  <?php 
+                  break;
+                case "/1RPROJECTEDAW2B2122/INDEX.PHP":
+                  ?>
+                  <a href="index.php?idioma=es"> <?php echo $idioma['es'] ?> </a> <br> <a href="index.php?idioma=en"> <?php echo $idioma['en'] ?></a> <br> <a href="index.php?idioma=cat"> <?php echo $idioma['cat'] ?> </a></p>
+                  <?php 
+                  break;                
+              }
+            ?>

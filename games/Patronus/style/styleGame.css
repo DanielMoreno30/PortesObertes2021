@@ -23,19 +23,20 @@
 /* Diseño cuadro de ayuda */
 .ayuda
 {
-    width: 85%;
+    font-family: superMario;
+    width: 100%;
     height: 10%;
-    bottom: 5%;
+    bottom: 10%;
     position: absolute;
     margin: auto;
-    background: url("../media/textoExplicacion.png");
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
     opacity: 1;
     border-radius: 50px;
     z-index: 999;
     opacity: 0;
+    color: white;
+    font-size: 35px;
+    text-align: center;
+    letter-spacing: 3px;
 }
 
 /* Animación del cuadro de ayuda para aparecer */
@@ -85,6 +86,7 @@
     margin-bottom: 10px;
     overflow: hidden;
     position: relative;
+    opacity: 1;
 }
 
 .colorProgreso
@@ -92,6 +94,7 @@
     width: 100%; 
     height: 4px;
     position: absolute;
+    opacity: 1;
 }
 
 /* Animadión del progreso para moverse */
@@ -114,6 +117,24 @@
     }
 }
 
+/* Animadión del progreso para moverse */
+.animationProgreso1
+{
+    animation: desaparicionProgreso 2s linear;
+}
+
+@keyframes desaparicionProgreso
+{
+    0%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        opacity: 0;
+    }
+}
+
 /* Diseño del cielo */
 #cielo
 {
@@ -130,6 +151,76 @@
     align-items: flex-end;
     position: relative;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    opacity: 1;
+}
+
+/* Animación ddel cielo para desaparecer */
+.animationCielo
+{
+    animation: desaparicionCielo 2s linear;
+}
+
+@keyframes desaparicionCielo
+{
+    0%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        opacity: 0;
+    }
+}
+
+/* Animación del cielo para aparecer */
+.animationCielo1
+{
+    animation: aparicionCielo 2s linear;
+}
+
+@keyframes aparicionCielo
+{
+    0%
+    {
+        opacity: 0;
+    }
+    100%
+    {
+        opacity: 1;
+    }
+}
+
+/* Diseño del fondo borroso */
+.fondoBorroso
+{
+    width: 75%;
+    height: 75%;
+    opacity: 0;
+    filter: blur(0rem);
+    position: relative;
+    background-color: white;
+    z-index: 800;
+    margin: auto;
+}
+
+/* Animación del fondo borroso */
+.animationFondoBorroso
+{
+    animation: aparicionFondoBorroso 2s linear;
+}
+
+@keyframes aparicionFondoBorroso
+{
+    0%
+    {
+        filter: blur(0rem);
+        opacity: 0;
+    }
+    100%
+    {
+        filter: blur(2rem);
+        opacity: 0.6;
+    }
 }
 
 /* Diseño de la/s estrella/s */
@@ -397,6 +488,7 @@
     padding: 0px;
     border: none;
     outline: none;
+    opacity: 1;
 }
 
 /* Animación del suelo para que se mueva */
@@ -414,6 +506,24 @@
     100%
     {
         left: -400%;
+    }
+}
+
+/* Animación del suelo para que desaparezca */
+.animationSuelo1
+{
+    animation: desaparicionSuelo 2s linear;
+}
+
+@keyframes desaparicionSuelo
+{
+    0%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        opacity: 0;
     }
 }
 
@@ -591,7 +701,7 @@
 
 .animationFantasma4
 {
-    animation: desaparicionFantasma 1s linear;
+    animation: desaparicionFantasma 0.75s linear;
 }
 
 @keyframes desaparicionFantasma
@@ -669,7 +779,7 @@
 }
 
 /* Animación del fantasma para aparecer */
-.animationFantasmaCep
+/* .animationFantasmaCep
 {
     animation: aparicionFantasmaCep 2s linear;
 }
@@ -681,8 +791,8 @@
         width: 0%;
         height: 0%;
         transform: rotate(0deg);
-        left: 6%;
-        bottom: 25%;
+        left: 4%;
+        bottom: 0%;
     }
     50%
     {
@@ -690,13 +800,13 @@
     }
     100%
     {
-        width: 15%;
-        height: 30%;
+        width: 12%;
+        height: 25%;
         transform: rotate(1080deg);
         left: 4%;
-        bottom: 12%;
+        bottom: 10%;
     }
-}
+} */
 
 /* Diseño de los botones */
 .botones
@@ -707,7 +817,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2;
+    z-index: 999;
 }
 
 #iniciar
@@ -720,7 +830,6 @@
     background-position: center;
     outline: none;
     border: none;
-    cursor: pointer;
     opacity: 0;
 }
 
@@ -1074,8 +1183,8 @@
 
 .burbuja1Final
 {
-    width: 50%; 
-    height: 50%;
+    width: 80%; 
+    height: 80%;
     position: relative;
     z-index: 999;
     display: flex;
@@ -1086,12 +1195,14 @@
     background-position: center;
     background-repeat: no-repeat;
     margin-bottom: 2%;
+    outline: none;
+    border: none;   
 }
 
 .burbuja2Final
 {
-    width: 50%; 
-    height: 50%;
+    width: 80%; 
+    height: 80%;
     position: relative;
     z-index: 999;
     display: flex;
@@ -1102,12 +1213,14 @@
     background-position: center;
     background-repeat: no-repeat;
     margin-bottom: 2%;
+    outline: none;
+    border: none;
 }
 
 .burbuja3Final
 {
-    width: 50%; 
-    height: 50%;
+    width: 80%; 
+    height: 80%;
     position: relative;
     z-index: 999;
     display: flex;
@@ -1118,14 +1231,14 @@
     background-position: center;
     background-repeat: no-repeat;
     margin-bottom: 2%;
+    outline: none;
+    border: none;
 }
 
 .burbuja4Final
 {
-    width: 50%; 
-    height: 50%;
-    position: relative;
-    z-index: 999;
+    width: 80%; 
+    height: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1133,7 +1246,8 @@
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    margin-bottom: 2%;
+    outline: none;
+    border: none;
 }
 
 .imagen1
@@ -1408,12 +1522,15 @@
     }
 }
 
+/* Diseño del cuadro de resultados */
 .resumen
 {
     opacity: 0;
     top: 0;
+    z-index: 800;
 }
 
+/* Animación del resumen para aparecer */
 .animationResumen
 {
     animation: aparicionResumen 2s linear;
@@ -1431,10 +1548,37 @@
     }
 }
 
+/* Diseño del tiempo final */
+.tiempo
+{
+    width: 100%;
+    height: 50%;
+    font-family: superMario;
+    font-size: 30px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Diseño de puntos final */
+.puntos
+{
+    width: 100%;
+    height: 50%;
+    font-family: superMario;
+    font-size: 30px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Diseño de los corazones finales */
 .corazonFinal1
 {
     width: 33.3%;
-    height: 100%;
+    height: 75%;
     background: url("../media/vidaVacia.png");
     background-size: contain;
     background-position: center;
@@ -1446,7 +1590,7 @@
 .corazonFinal2
 {
     width: 33.3%;
-    height: 100%;
+    height: 75%;
     background: url("../media/vidaVacia.png");
     background-size: contain;
     background-position: center;
@@ -1458,7 +1602,7 @@
 .corazonFinal3
 {
     width: 33.3%;
-    height: 100%;
+    height: 75%;
     background: url("../media/vidaVacia.png");
     background-size: contain;
     background-position: center;
@@ -1467,29 +1611,36 @@
     opacity: 1;
 }
 
-.tiempo
+/* Diseño de la burbuja de familias final */
+.imagenBurbujaFinal
 {
     width: 100%;
-    height: 50%;
-    font-family: superMario;
-    font-size: 45px;
-    color: black;
+    height: 100%;
+    background: url("../media/burbuja2.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
+/* Diseño del títilo de familia de curso */
 .familiaCursos
 {
     width: 100%;
+    height: 50%;
     font-family: superMario;
     font-size: 10px;
     color: black;
     position: relative;
     bottom: 0;
     text-align: center;
+    letter-spacing: 2px;
 }
 
+/* Diseño de la burbuja de refrescar la pantalla */
 .burbujaRefrescar
 {
     width: 5%; 
@@ -1523,6 +1674,7 @@
     background-repeat: no-repeat;
 }
 
+/* Animación de la burbuja de refresca para que aparezca */
 .animationBurbujaRefrescar
 {
     animation: aparicionBurbujaRefrescar 2s linear;
@@ -1539,4 +1691,46 @@
     {
         opacity: 1;
     }
+}
+
+.flip-card 
+{
+    width: 100%;
+    perspective: 1000px;
+    cursor: pointer;
+}
+  
+.flip-card-inner 
+{
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    background-color: #0f2323;
+    border-radius: 5%;
+}
+
+.flip-card-front 
+{
+    background-color: #bbb;
+}
+
+.flip-card-back 
+{
+    background-color: #0f2323;
+    transform: rotateY(180deg);
+    border-radius: 5%;
+}
+
+.flip-card-front, .flip-card-back 
+{
+    position: absolute;
+    width: 85%;
+    height: 85%;
+    backface-visibility: hidden;
+}
+  
+.flip-card:hover .flip-card-inner 
+{
+    transform: rotateY(180deg);
 }

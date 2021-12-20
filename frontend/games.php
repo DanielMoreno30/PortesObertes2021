@@ -121,7 +121,6 @@
                         <?php
                                 }
                                 else
-<<<<<<< HEAD
                                 {   
                                     $encontrado = false;
 
@@ -135,9 +134,6 @@
 
                                     if($encontrado)
                                     {      
-=======
-                                {
->>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
                         ?>
                                     <div class="carousel-item">
                                         <a href="<?php echo $juego["url_juego"] ?>" type="button">
@@ -145,7 +141,6 @@
                                         </a>
                                     </div>
                         <?php
-<<<<<<< HEAD
                                     }
                                     else
                                     {
@@ -157,8 +152,6 @@
                                     </div> 
                         <?php
                                     }
-=======
->>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
                                 }
                             }
                         ?>

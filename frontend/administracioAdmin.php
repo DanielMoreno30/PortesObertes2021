@@ -29,17 +29,12 @@
             <div class="container-fluid d-flex justify-content-end mb-3">
                 <form action="../php_views/formularioInsertarAdmin.php" method="POST">
                     <button type="submit" name="insertarAdmin" class="btn shadow-none" style="cursor: pointer; text-decoration: none;">
-<<<<<<< HEAD
                         <i class="fas fa-user-plus fa-3x me-5 iconAdmin"></i>
-=======
-                        <i class="fas fa-user-plus fa-3x me-5"></i>
->>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
                     </button>
                     <input id="numeroOcultoInsertar" type="hidden" name="numeroOcultoInsertar" value="">
                 </form>
                 <form action="../php_controllers/usuariosController.php" method="POST">
                     <button id="btnEditar" type="submit" name="editarAdmin" class="btn shadow-none" style="cursor: pointer; text-decoration: none;" disabled>
-<<<<<<< HEAD
                         <i class="fas fa-user-edit fa-3x me-5 iconAdmin"></i>
                     </button>
                     <input id="numeroOcultoEditar" type="hidden" name="numeroOcultoEditar" value="">
@@ -79,18 +74,6 @@
                         </div>
                     </div>
                 </div>
-=======
-                        <i class="fas fa-user-edit fa-3x me-5"></i>
-                    </button>
-                    <input id="numeroOcultoEditar" type="hidden" name="numeroOcultoEditar" value="">
-                </form>
-                <form action="../php_controllers/usuariosController.php" method="POST">
-                    <button id="btnBorrar" type="submit" name="borrarAdmin" class="btn shadow-none" style="cursor: pointer; text-decoration: none;" disabled>
-                        <i class="fas fa-user-minus fa-3x"></i>
-                    </button>
-                    <input id="numeroOcultoBorrar" type="hidden" name="numeroOcultoBorrar" value="">
-                </form>
->>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
             </div>
             <div class="container-fluid">
                 <table id="tablaAdmins" class="table bg-dark">

@@ -34,7 +34,6 @@
         <div class="container h-100">
             <div class="container-fluid d-flex justify-content-end mb-3">
                 <form action="../php_controllers/usuariosController.php" method="POST">
-<<<<<<< HEAD
                     <button id="btnEditarUsuario" type="submit" name="editarUsuario" class="btn shadow-none" style="cursor: pointer; text-decoration: none;" disabled>
                         <i class="fas fa-user-edit fa-3x me-5 iconAdmin"></i>
                     </button>
@@ -75,19 +74,6 @@
                         </div>
                     </div>
                 </div>
-=======
-                    <button type="submit" name="borrarUsuario" class="btn" style="cursor: pointer; text-decoration: none;">
-                        <i class="fas fa-user-minus fa-3x"></i>
-                    </button>
-                    <input id="numeroOculto" type="hidden" name="numeroOcultoBorrar" value="">
-                </form>
-                <form action="../php_controllers/usuariosController.php" method="POST">
-                    <button id="btnEditarUsuario" type="submit" name="editarUsuario" class="btn shadow-none" style="cursor: pointer; text-decoration: none;" disabled>
-                        <i class="fas fa-user-edit fa-3x me-5"></i>
-                    </button>
-                    <input id="numeroOcultoEditar2" type="hidden" name="numeroOcultoEditar2" value="">
-                </form>
->>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
             </div>
             <div class="container-fluid">
                 <table id="tablaUsuarios" class="table bg-dark" style="height: 100%;">

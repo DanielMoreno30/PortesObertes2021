@@ -1,8 +1,5 @@
 <?php
-<<<<<<< HEAD
     include "../php_controllers/configuracionIdiomas.php";
-=======
->>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
     require_once("../php_libraries/bd.php");
     session_start();
 ?>

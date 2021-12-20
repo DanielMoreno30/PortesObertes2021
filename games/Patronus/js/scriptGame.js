@@ -76,6 +76,9 @@ var colorProgreso = document.querySelector(".colorProgreso");
 var cielo = document.getElementById("cielo");
 var cieloHeight = cielo.offsetHeight;
 
+//FONDO BORROSO
+var fondoBorroso = document.querySelector(".fondoBorroso");
+
 //NUBES
 var nubes = document.querySelectorAll(".nube");
 
@@ -99,6 +102,7 @@ var portalFinal = document.getElementById("portalFinal");
 
 //BOTÓN DE INICIAR EL JUEGO
 var botonIniciar = document.getElementById("iniciar");
+botonIniciar.disabled = true;
 
 //OBSTÁCULOS
 var obstaculos = document.querySelectorAll(".obstaculo");
@@ -128,6 +132,11 @@ var burbuja1Final = document.querySelector(".burbuja1Final");
 var burbuja2Final = document.querySelector(".burbuja2Final");
 var burbuja3Final = document.querySelector(".burbuja3Final");
 var burbuja4Final = document.querySelector(".burbuja4Final");
+var flip1 = document.getElementById("flip1");
+var flip2 = document.getElementById("flip2");
+var flip3 = document.getElementById("flip3");
+var flip4 = document.getElementById("flip4");
+var familiaCursos = document.querySelectorAll(".familiaCursos");
 
 //CORAZONES
 var corazones = document.querySelectorAll(".corazon");
@@ -176,6 +185,7 @@ var numeroBurbujas = document.querySelector(".numeroBurbujas");
 var numeroBurbujasFinal = document.querySelector(".numeroBurbujasFinal");
 var contadorBurbujas = 0;   
 var contadorCorazones = 1;
+var puntos = 0;
 
 //BOOLEANO
 var dead = false;
@@ -230,10 +240,12 @@ setTimeout(function()
     fantasma.classList.remove("animationFantasma1");
     fantasma.classList.add("animationFantasma");
 
-    //Le añadimos esta animación al botón de iniciar el juego para que aparezca en pantalla
-    //y establecemos el valor de opacidad que queremos que tenga al final de la animación. 
+    //Habilitamos el botón, le añadimos esta animación al botón de iniciar el juego para que aparezca en pantalla
+    //y establecemos el valor de opacidad que queremos que tenga al final de la animación.
+    botonIniciar.disabled = false; 
     botonIniciar.classList.add("animationBotonIniciar");
     botonIniciar.style.opacity = "1";
+    botonIniciar.cursor = "pointer";
 
     document.body.onkeyup = function(e){
         if(e.keyCode === 13)
@@ -252,11 +264,12 @@ setTimeout(function()
 function contadorAtras()
 {
     //Cambiar texto del cuadro de ayuda.
-    ayuda.style.width = "70%";
-    ayuda.style.background = "url(../media/textoSpaceBar.png)";
+    ayuda.innerHTML = "Para saltar pulsa la barra espaciadora repetitivamente.";
+    /*ayuda.style.background = "url(../media/textoSpaceBar.png)";
     ayuda.style.backgroundSize = "contain";
     ayuda.style.backgroundRepeat = "no-repeat";
     ayuda.style.backgroundPosition = "center";
+    */
 
     //Cuando pasen 5 segundos desde que ha empezado el juego:
     setTimeout(function()
@@ -320,19 +333,20 @@ function contadorAtras()
     //Cuando pasen 4 segundos desde que ha empezado el juego:
     setTimeout(function()
     {
+        //Así abrimos el temporizador, guardando el momento exacto del comienzo de la partida:
         start = new Date().getTime();
 
         //Mostramos el marcador.
         marcador.classList.add("animationMarcador");
         marcador.style.opacity = "1";
 
-        //Ocuultamos el botón para no distraer al usuario y reanudamos la animiación
+        //Ocultamos el botón para no distraer al usuario y reanudamos la animiación
         //que hacia flotar al fantasma.
         botonIniciar.style.display = "none";
         fantasma.style.animationPlayState = "running";
 
         //Iniciamos la música del juego.
-        melodiaOri.play();
+        //melodiaOri.play();
 
         //Añadimos animaciónes a la barra de progreso y al suelo para que empiecen a moverse.
         colorProgreso.classList.add("animationProgreso");
@@ -374,6 +388,8 @@ function contadorAtras()
         //Función para que el fantasma salte:
         funcionSaltar = function saltar()
         {
+            puntos = puntos + 1;
+
             //Borramos el intervalo de gravedad para facilitar un poco al usuario, sinó 
             //el fantasma baja demasiado rápido y el salto casi no se nota.
             clearInterval(intervaloGravedad);
@@ -605,60 +621,76 @@ function contadorAtras()
         
         function morir()
         {
-            //Primera colisión: 
-            var fantasmaLeft = parseInt(window.getComputedStyle(fantasma).getPropertyValue("left"));
-            var fantasmaTop = parseInt(window.getComputedStyle(fantasma).getPropertyValue("top"));
-            var fantasmaWidth = parseInt(window.getComputedStyle(fantasma).getPropertyValue("width"));
-            var fantasmaHeight = parseInt(window.getComputedStyle(fantasma).getPropertyValue("height"));
-            var agujero1Left = parseInt(window.getComputedStyle(agujero1).getPropertyValue("left"));
-            var agujero1Top = parseInt(window.getComputedStyle(agujero1).getPropertyValue("top"));
-            var agujero1Height = parseInt(window.getComputedStyle(agujero1).getPropertyValue("height"));
-            var agujero1Width = parseInt(window.getComputedStyle(agujero1).getPropertyValue("width"));
-
-            //Función para descontar corazones:
+            //Función para descontar corazones al chocarse:
             function descontarCorazon()
             {
+                //Si es igual a 1 es que es la primera vez que se choca:
                 if(contadorCorazones == 1)
                 {
+                    puntos = puntos - 5;
+                    //Al corazón le añadimos la animación de parpadear, ponemos
+                    //la imagen de un corazon vacío y sumamos uno al contador
                     corazon3.classList.add("animationCorazon");
                     corazon3.style.background = "";
                     corazon3.style.backgroundImage = "url(../media/vidaVacia.png)";
                     contadorCorazones = contadorCorazones + 1;
 
+                    //Quitamos el intervalo para detectar el choque porque al hacerse cada 10 milisegundos
+                    //detecta el mismo choque más de una vez 
                     clearInterval(muerto);
 
+                    //Cuando pase un segundo volvemos a poner el intervalo
                     setTimeout(function()
                     {
                         muerto = setInterval(morir, 10);
                     },1000);
 
-                    siSeChoca()
+                    //Función para poner animación al fantasma 
+                    siSeChoca();
                 }
+                //Si es igual a 2 es que es la segunda vez que se choca:
                 else if(contadorCorazones == 2)
                 {
+                    puntos = puntos - 10;
+
+                    //Al corazón le añadimos la animación de parpadear, ponemos
+                    //la imagen de un corazon vacío y sumamos uno al contador
                     corazon2.classList.add("animationCorazon");
                     corazon2.style.background = "";
                     corazon2.style.backgroundImage = "url(../media/vidaVacia.png)";
                     contadorCorazones = contadorCorazones + 1;
 
+                    //Quitamos el intervalo para detectar el choque porque al hacerse cada 10 milisegundos
+                    //detecta el mismo choque más de una vez 
                     clearInterval(muerto);
 
+                    //Cuando pase un segundo volvemos a poner el intervalo
                     setTimeout(function()
                     {
                         muerto = setInterval(morir, 10);
                     },1000);
 
-                    siSeChoca()
+                    //Función para poner animación al fantasma 
+                    siSeChoca();
                 }
+                //Si es igual a 3 es que es la tercera vez que se choca:
                 else if(contadorCorazones == 3)
                 {
+                    puntos = puntos - 15;
+
+                    //Lo ponemos true para mostrar que se muere
                     dead = true;
 
+                    //Al corazón le añadimos la animación de parpadear, ponemos
+                    //la imagen de un corazon vacío y sumamos uno al contador
                     corazon1.classList.add("animationCorazon");
                     corazon1.style.background = "";
                     corazon1.style.backgroundImage = "url(../media/vidaVacia.png)";
                     contadorCorazones = contadorCorazones + 1;
 
+                    //Pausamos todas las animaciones, del suelo, el fantasma, el progreso, los obstaculos 
+                    //y los agujeros. También los ocultamos y también desactivamos el botón espaciador 
+                    //para que no salte
                     suelo.style.animationPlayState = "paused";
                     fantasma.style.animationPlayState = "paused";
                     colorProgreso.style.animationPlayState = "paused";
@@ -666,24 +698,10 @@ function contadorAtras()
                     for(var obstaculo of obstaculos)
                     {
                         obstaculo.style.animationPlayState = "paused";
-                    }
-
-                    document.body.onkeyup = function(e)
-                    {
-                        if(e.keyCode == 32)
-                        {
-                            return false;
-                        }
-                    }
-
-                    clearInterval(muerto);
-
-                    cielo.style.innerHTML = "";
-                    
-                    for(var obstaculo of obstaculos)
-                    {
                         obstaculo.style.display = "none";
                     }
+
+                    cielo.style.innerHTML = "";
 
                     fantasma.style.display = "none";
 
@@ -696,19 +714,41 @@ function contadorAtras()
                     agujero2.style.display = "none";
                     agujero3.style.display = "none";
 
-                    end = new Date().getTime();
-
                     marcador.classList.remove("animationMarcador");
                     marcador.classList.add("animationMarcador1");
                     marcador.style.opacity = 0;
                     marcador.style.zIndex = "999";
 
+                    document.body.onkeyup = function(e)
+                    {
+                        if(e.keyCode == 32)
+                        {
+                            return false;
+                        }
+                    }
+
+                    //Quitamos el intervalo para detectar el choque porque al hacerse cada 10 milisegundos
+                    //detecta el mismo choque más de una vez 
+                    clearInterval(muerto);
+
+                    //Guardamos el momento en el que el usuario acaba la partida:
+                    end = new Date().getTime();
+
+                    //Cuando pase 1 segundo mostramos el resumen, pausamos la música y mostramos
+                    //el botón de refrescar
                     setTimeout(function()
                     {
+                        //melodiaOri.pause();
                         mostrarResultados();
 
                         resumen.classList.add("animationResumen");
                         resumen.style.opacity = "1";
+                        resumen.style.zIndex = "999";
+
+                        ayuda.classList.remove("animationAyuda1");
+                        ayuda.style.background = "none";
+                        ayuda.innerHTML = "¡Coloca el raton encima de una burbuja para acceder a una familia de cursos!";
+                        ayuda.style.opacity = "1";
 
                         botonRefrescar.classList.add("animationBurbujaRefrescar");
                         botonRefrescar.style.opacity = "1";
@@ -718,17 +758,22 @@ function contadorAtras()
                 }
             }
 
-            //Función para cuando se acaban las 3 vidas del jugador:
+            //Función para animar al fantasma cuando se choca:
             function siSeChoca()
             {
+                //Quitamos el intervalo de gravedad para que no bae durante la animación
                 clearInterval(intervaloGravedad);
 
+                //Pausamos las animaciones del suelo y de progreso y al fantasma le añadimos la animación
+                //de parpadear
                 suelo.style.animationPlayState = "paused";
                 colorProgreso.style.animationPlayState = "paused";
 
                 fantasma.classList.add("animationFantasma4");
                 fantasma.style.animationPlayState = "running";
 
+                //También desactivamos la tecla espaciadora para que el usuario no pueda saltar
+                //durante la animación
                 document.body.onkeyup = function(e)
                 {
                     if(e.keyCode == 32)
@@ -737,6 +782,8 @@ function contadorAtras()
                     }
                 }
 
+                //Cuando pase un segundo volvemos a activar el intervalo de gravedad para que siga bajando
+                //activamos la tecla espaciadosa y animamos el suelo y el progreso
                 setTimeout(function()
                 { 
                     fantasma.classList.remove("animationFantasma4");
@@ -754,64 +801,77 @@ function contadorAtras()
 
                     suelo.style.animationPlayState = "running";
                     colorProgreso.style.animationPlayState = "running";
-                }, 1000);
+                }, 750);
 
+                //Quitamos el intervalo de morir durante la animación
                 clearInterval(muerto);
             }
+
+            //Datos para la primera colisión: 
+            var fantasmaLeft = parseInt(window.getComputedStyle(fantasma).getPropertyValue("left"));
+            var fantasmaTop = parseInt(window.getComputedStyle(fantasma).getPropertyValue("top"));
+            var fantasmaWidth = parseInt(window.getComputedStyle(fantasma).getPropertyValue("width"));
+            var fantasmaHeight = parseInt(window.getComputedStyle(fantasma).getPropertyValue("height"));
+            var agujero1Left = parseInt(window.getComputedStyle(agujero1).getPropertyValue("left"));
+            var agujero1Top = parseInt(window.getComputedStyle(agujero1).getPropertyValue("top"));
+            var agujero1Height = parseInt(window.getComputedStyle(agujero1).getPropertyValue("height"));
+            var agujero1Width = parseInt(window.getComputedStyle(agujero1).getPropertyValue("width"));
 
             //Colisión con tuberia de arriba 1
             if(((agujero1Left <= (fantasmaWidth + fantasmaLeft)) 
             && (agujero1Left > fantasmaLeft)) 
-            && fantasmaTop < agujero1Top)
+            && fantasmaTop <= agujero1Top)
             {
                 descontarCorazon();
             }
 
-            //Colisión con tuberia de abajo 2
+            //Colisión con tuberia de abajo 1
             if(agujero1Left < fantasmaWidth + fantasmaLeft
-            && fantasmaLeft < agujero1Left + (agujero1Width - 10)
+            && fantasmaLeft + 10 < agujero1Left + (agujero1Width - 10)
             && fantasmaTop > agujero1Top + agujero1Height - fantasmaHeight + 2)
             {
                 descontarCorazon();
             }
 
-            //Segunda colisión: 
+            //Datos para lq segunda colisión: 
             var agujero2Left = parseInt(window.getComputedStyle(agujero2).getPropertyValue("left"));
             var agujero2Top = parseInt(window.getComputedStyle(agujero2).getPropertyValue("top"));
             var agujero2Height = parseInt(window.getComputedStyle(agujero2).getPropertyValue("height"));
             var agujero2Width = parseInt(window.getComputedStyle(agujero2).getPropertyValue("width"));
 
-            //Colisión con tuberia de arriba 1
-            if(((agujero2Left <= (fantasmaWidth + fantasmaLeft)) && (agujero2Left > fantasmaLeft)) 
-            && fantasmaTop < agujero2Top)
+            //Colisión con tuberia de arriba 2
+            if(((agujero2Left <= (fantasmaWidth + fantasmaLeft)) 
+            && (agujero2Left > fantasmaLeft)) 
+            && fantasmaTop <= agujero2Top)
             {
                 descontarCorazon();
             }
 
             //Colisión con tuberia de abajo 2
             if(agujero2Left < fantasmaWidth + fantasmaLeft
-            && fantasmaLeft < agujero2Left + agujero2Width
+            && fantasmaLeft + 10 < agujero2Left + agujero2Width
             && fantasmaTop > agujero2Top + agujero2Height - fantasmaHeight + 2)
             {
                 descontarCorazon();
             }
 
-            //Tercera colisión: 
+            //Datos para la tercera colisión: 
             var agujero3Left = parseInt(window.getComputedStyle(agujero3).getPropertyValue("left"));
             var agujero3Top = parseInt(window.getComputedStyle(agujero3).getPropertyValue("top"));
             var agujero3Height = parseInt(window.getComputedStyle(agujero3).getPropertyValue("height"));
             var agujero3Width = parseInt(window.getComputedStyle(agujero3).getPropertyValue("width"));
 
-            //Colisión con tuberia de arriba 1
-            if(((agujero3Left <= (fantasmaWidth + fantasmaLeft)) && (agujero3Left > fantasmaLeft)) 
-            && fantasmaTop < agujero3Top)
+            //Colisión con tuberia de arriba 3
+            if(((agujero3Left <= (fantasmaWidth + fantasmaLeft)) 
+            && (agujero3Left > fantasmaLeft)) 
+            && fantasmaTop <= agujero3Top)
             {
                 descontarCorazon();
             }
 
-            //Colisión con tuberia de abajo 2
+            //Colisión con tuberia de abajo 3
             if(agujero3Left < fantasmaWidth + fantasmaLeft
-            && fantasmaLeft < agujero3Left + agujero3Width
+            && fantasmaLeft + 10 < agujero3Left + agujero3Width
             && fantasmaTop > agujero3Top + agujero3Height - fantasmaHeight + 2)
             {
                 descontarCorazon();
@@ -819,10 +879,13 @@ function contadorAtras()
         }
 
         //CAPTURA DE BURBUJAS
+        //Intervalo que se realiza cada 10 mmilisegundos para detectar si estamos en contacto con una burbuja
         captura = setInterval(capturar, 10);
 
+        //Función para detectar captura de burbujas:
         function capturar()
         {
+            //Contamos las burbujas capturadas:
             function contarBurbujas()
             {
                 switch(contadorBurbujas)
@@ -864,6 +927,8 @@ function contadorAtras()
             && fantasmaTop > agujero1Top
             && fantasmaTop < agujero1Height + agujero1Top)
             {
+                puntos = puntos + 10;
+
                 guardarBurbujas.push("CM");
 
                 contadorBurbujas++;
@@ -893,6 +958,8 @@ function contadorAtras()
             && fantasmaTop > agujero2Top
             && fantasmaTop < agujero2Height + agujero2Top)
             {
+                puntos = puntos + 15;
+
                 guardarBurbujas.push("HT");
 
                 contadorBurbujas++;
@@ -918,6 +985,8 @@ function contadorAtras()
             if(burbuja3Left <= (fantasmaWidth + fantasmaLeft) 
             && burbuja3Left > fantasmaLeft)
             {
+                puntos = puntos + 20;
+
                 guardarBurbujas.push("IC");
 
                 contadorBurbujas++;
@@ -954,6 +1023,8 @@ function contadorAtras()
             && fantasmaTop > agujero3Top
             && fantasmaTop < agujero3Height + agujero3Top)
             {
+                puntos = puntos + 25;
+
                 guardarBurbujas.push("AG");
 
                 contadorBurbujas++;
@@ -978,7 +1049,7 @@ function contadorAtras()
     {
         if(!dead)
         {
-            //Cuando pasen 78 segundos desde que ha empezado el juego:
+            //Cuando pasen 71 segundos desde que ha empezado el juego:
             setTimeout(function()
             {
                 //Ocultamos los obstaculos número 1 y número 2 y les quitamos las animaciones
@@ -990,14 +1061,9 @@ function contadorAtras()
                 //Ocultamos y le quitamos la animación al agujero número 1
                 agujero1.style.display = "none";
                 agujero1.style.animation = "none";
-                
-                //Borramos el intervalo que detecta colisiones para que se pueda realizar
-                //la animación que viene a continuación, si no borramos este intervalo se detectan
-                //colisiones y el fantasma muere durante la animación
-                clearInterval(muerto);
             }, 1000);
 
-            //Cuando pasen 78 segundos desde que ha empezado el juego:
+            //Cuando pasen 73 segundos desde que ha empezado el juego:
             setTimeout(function()
             {
                 //Ocultamos los obstaculos número 3 y número 4 y les quitamos las animaciones
@@ -1014,6 +1080,7 @@ function contadorAtras()
             //Cuando pasen 70 segundos desde que ha empezado el juego:
             setTimeout(function()
             {
+                //Pausamos la animación del suelo y establecemos la posición de la barra de progreso
                 suelo.style.animationPlayState = "paused";
                 colorProgreso.style.right = "0%";
                 colorProgreso.style.backgroundColor = "#08fbe3";
@@ -1027,6 +1094,11 @@ function contadorAtras()
                 //Ocultamos y le quitamos la animación al agujero número 2
                 agujero3.style.display = "none";
                 agujero3.style.animation = "none";
+
+                //Borramos el intervalo que detecta colisiones para que se pueda realizar
+                //la animación que viene a continuación, si no borramos este intervalo se detectan
+                //colisiones y el fantasma muere durante la animación
+                clearInterval(muerto);
 
                 //Desactivamos la tecla 'espacio' para que el usuario no pueda interferir en la animación,
                 //si no la desactivamos y el usuario decide usarla, peta la animación.
@@ -1085,6 +1157,7 @@ function contadorAtras()
                 fantasma.style.width = "0%";
                 fantasma.style.height = "0%";
 
+                //Guardamos el momento en el que el usuario acaba la partida:
                 end = new Date().getTime();
             }, 11000);
 
@@ -1099,33 +1172,26 @@ function contadorAtras()
                 portalFinal.style.width = "0%";
                 portalFinal.style.height = "0%";
 
+                //Al marcador le añadimos la animación de desaparecer y establecemos el valor de opacidad
+                //que queremos que tenga al final de la animación.
                 marcador.classList.remove("animationMarcador");
                 marcador.classList.add("animationMarcador1");
-                marcador.style.opacity = 0;
-                marcador.style.zIndex = "999";
+                marcador.style.opacity = 0; 
+
+                progreso.classList.add("animationProgreso1");
+                colorProgreso.classList.remove("animationProgreso");
+                colorProgreso.classList.add("animationProgreso1");
+                cielo.classList.add("animationCielo");
+                cielo.style.opacity = "0";
             }, 13000);
 
             //Cuando pasen 78 segundos desde que ha empezado el juego:
             setTimeout(function()
-            {   
-                mostrarResultados();
-
-                resumen.classList.add("animationResumen");
-                resumen.style.opacity = "1";
-
-                botonRefrescar.classList.add("animationBurbujaRefrescar");
-                botonRefrescar.style.opacity = "1";
-                botonRefrescar.style.display = "flex";
-                botonRefrescar.style.cursor = "pointer";
-            }, 14000);
-
-            /*
-            setTimeout(function()
-            {   
+            {                   
                 suelo.style.display = "none";
                 progreso.style.display = "none";
                 colorProgreso.style.display = "none";
-                
+
                 for(var nube of nubes)
                 {
                     nube.style.display = "none";
@@ -1136,46 +1202,64 @@ function contadorAtras()
                     estrella.style.display = "none";
                 }
 
-                cielo.style.width = "50%";
-                cielo.style.height = "60%";
                 cielo.style.background = "url(../media/centro2.jpg)";
                 cielo.style.backgroundSize = "cover";
                 cielo.style.backgroundRepeat = "no-repeat";
-                cielo.style.backgroundPosition = "center";
+                cielo.style.backgroundPosition = "bottom";
+                cielo.style.width = "100%";
+                cielo.style.height = "100%";
+            }, 15000);
 
-                portal.classList.remove("animationPortal1");
-                portal.classList.add("animationPortal");
-                portal.style.width = "10%";
-                portal.style.height = "30%";
-            }, 80000);
-
+            //Cuando pasen 78 segundos desde que ha empezado el juego:
             setTimeout(function()
-            { 
-                fantasma.classList.remove("animationFantasma3");
-                fantasma.classList.add("animationFantasma1");
-
-                fantasma.style.width = "15%";
+            {                   
+                cielo.classList.remove("animationCielo");
+                cielo.classList.add("animationCielo1");
+                cielo.style.opacity = "1";
+               
+                fantasma.style.width = "20%";
                 fantasma.style.height = "30%";
+                fantasma.style.top = "50%";
                 fantasma.style.left = "4%";
-                fantasma.style.bottom = "12%";
-            }, 81000);
+
+                fantasma.classList.remove("animationFantasma3");
+                fantasma.classList.add("animationFantasma");
+
+                //Función para guardar los resultados
+                mostrarResultados();
+
+                //Al botón de refrescar le añadimos la animación de aparecer y establecemos los valores de opacidad,
+                //display y cursor, que queremos que tenga al final de la animación
+                botonRefrescar.classList.add("animationBurbujaRefrescar");
+                botonRefrescar.style.opacity = "1";
+                botonRefrescar.style.display = "flex";
+                botonRefrescar.style.cursor = "pointer";
+            }, 16000);
 
             setTimeout(function()
             { 
-                portal.classList.remove("animationPortal");
-                portal.classList.add("animationPortal1");
-                portal.style.width = "0%";
-                portal.style.height = "0%";
+                fondoBorroso.classList.add("animationFondoBorroso");
+                fondoBorroso.style.opacity = "0.6";
+                fondoBorroso.style.filter = "blur(1.5rem)";
 
-                fantasma.classList.remove("animationFantasmaCep");
-                fantasma.classList.add("animationFantasma");
-            }, 83000);
-            */
+                //Al cuadro de resultados le añadimos la animación de aparecer y establecemos el valor de opacidad
+                //que queremos que tenga al final de la animación.
+                resumen.classList.add("animationResumen");
+                resumen.style.opacity = "1";
+                resumen.style.zIndex = "999";
+
+                for(var familia of familiaCursos)
+                {
+                    familia.style.fontSize = "20px";
+                }
+            }, 18000);
         }
     }, 65000);
 
+    //Funcion para mostrar el resultado:
     function mostrarResultados()
     {
+        //Comprobamos el contador de corazones para ver cuantos corazones le quedan al usuario:
         switch(contadorCorazones)
         {
             case 1:
@@ -1202,6 +1286,7 @@ function contadorAtras()
                 break;
         }
 
+        //Comprobamos el contador de burbujas para ver cuantas burbujas ha recogido el usuario:
         switch(contadorBurbujas)
         {
             case 0:
@@ -1241,28 +1326,37 @@ function contadorAtras()
                 break;
         } 
 
+        //Para comprobar el tiempo que ha jugado, hacemos esta resta entre restando al momento de finalización de la partida el momento de comienzo de la partida, y
+        //luego convertimos el resultado en segundos:
         total = end - start;
         var segundos = (total / 1000).toFixed(0);
-        document.querySelector(".tiempo").innerHTML = segundos + "s";
+        document.querySelector(".tiempo").innerHTML = segundos + " s";
+        document.querySelector(".puntos").innerHTML = puntos + " pts";
 
+        //Tenemos un array en el que se van guardando las burbujas que recogemos, si no las hemos recogido les bajamos la saturación para que salgan en gris,
+        //si las hemos recogido nos saldran en color:
         if(!guardarBurbujas.includes("CM"))
         {
             burbuja1Final.style.filter = "saturate(0)";
+            flip1.style.filter = "saturate(0)";
         }
 
         if(!guardarBurbujas.includes("HT"))
         {
             burbuja2Final.style.filter = "saturate(0)";
+            flip2.style.filter = "saturate(0)";
         }
 
         if(!guardarBurbujas.includes("IC"))
         {
             burbuja3Final.style.filter = "saturate(0)";
+            flip3.style.filter = "saturate(0)";
         }
 
         if(!guardarBurbujas.includes("AG"))
         {
             burbuja4Final.style.filter = "saturate(0)";
+            flip4.style.filter = "saturate(0)";
         }
     }
 }

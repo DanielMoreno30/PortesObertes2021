@@ -15,24 +15,8 @@
                 }
               ?>
             <ul class="navbar-nav ms-auto">
-<<<<<<< HEAD
               <li><a href="../index.php" class="nav-item nav-link active"><?php echo $idioma['NavbarInici'] ?></a></li>
               <li><a href="./cursos.php" class="nav-item nav-link"><?php echo $idioma['NavbarCursos'] ?></a></li>
-=======
-              <?php
-                if(isset($_SESSION["idIS"]))
-                {
-                  if($_SESSION["idIS"]["tipo"] == 'A')
-                  {
-              ?>
-                  <li><a href="frontend/administracio.php" class="nav-item nav-link">Admin</a></li>
-              <?php
-                  }
-                }
-              ?>
-              <li><a href="../index.php" class="nav-item nav-link active">Inici</a></li>
-              <li><a href="./cursos.php" class="nav-item nav-link">Cursos</a></li>
->>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
               <li>
                 <a href="./games.php" class="nav-item nav-link"><?php echo $idioma['NavbarJocs'] ?></a>
               </li>

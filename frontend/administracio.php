@@ -22,10 +22,7 @@
     <link rel="stylesheet" href="../style/navbaraboutus.css">
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
     <link rel="icon"  href="../img/politecnicsico.png" type="image/png" />
-<<<<<<< HEAD
     <link rel="stylesheet" href="../style/administracio.css">
-=======
->>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
 </head>
 <body class="overflow-hidden" style="font-family: 'Assistant'; height: 100vh;">
     <?php
@@ -34,25 +31,15 @@
 
     <div class="container-fluid h-100 d-flex flex-row justify-content-center align-items-center">
         <a href="../frontend/administracioAdmin.php" class="col d-flex flex-row justify-content-end align-items-center" style="height: 50%; color: black;"> 
-<<<<<<< HEAD
             <div class="cardAdmin card h-100 bg-dark shadow d-flex justify-content-center align-items-center" 
             style="width: 50%; background-color: #d3d3d3; position: relative; right: 10%; border-radius: 8%; cursor: pointer;">
-=======
-            <div class="card h-100 bg-dark shadow d-flex justify-content-center align-items-center" 
-            style="width: 50%; background-color: #d3d3d3; position: relative; right: 10%; border-radius: 8%; cursor: pointer;"> <!-- background: url('../img/imageUser.png');
-            background-size: contain; background-repeat: no-repeat; background-position: center; -->
->>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
                 <i class="fas fa-user-shield fa-8x position-absolute" style="filter: invert(85%); top: 20%;"></i>
                 <h2 class="text-white fw-bold position-absolute" style="bottom: 15%; font-size: 25px;">Administradors</h2>
             </div>
         </a>
 
         <a href="../frontend/administracioUsuaris.php" class="col d-flex flex-row justify-content-start align-items-center" style="height: 50%; color: black;"> 
-<<<<<<< HEAD
             <div class="cardAdmin card h-100 bg-dark shadow d-flex justify-content-center align-items-center" 
-=======
-            <div class="card h-100 bg-dark shadow d-flex justify-content-center align-items-center" 
->>>>>>> 1f1be764faa7fc79fa7fda01bfb8f98fb1c5723e
             style="width: 50%; background-color: #d3d3d3; position: relative; left: 10%; border-radius: 8%; cursor: pointer;"> 
                 <i class="fas fa-users fa-8x position-absolute" style="filter: invert(85%); top: 20%;"></i>
                 <h2 class="text-white fw-bold position-absolute" style="bottom: 15%; font-size: 25px;">Usuaris</h2>
