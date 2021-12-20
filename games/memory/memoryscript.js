@@ -86,14 +86,27 @@ function finjuegowin() {
       document.getElementById("finjuego").innerHTML =
         "<h1>¡Has guanyat! ¡Enhorabona i a per el seguent joc!</h1> <br>"
         var btn = document.createElement("boton");
-        btn.innerHTML = "Tornar a jugar";                 
+        var btnAtras = document.createElement("boton");
+        btn.innerHTML = "Tornar a jugar <br>";
+        btnAtras.innerHTML = "Tornar enrere";              
         document.getElementById("finjuego").appendChild(btn);
+        document.getElementById("finjuego").appendChild(btnAtras);
 
         btn.style.backgroundColor="#2069a5";
         btn.style.borderRadius="5px";
+        btnAtras.style.backgroundColor="#2069a5";
+        btnAtras.style.borderRadius="5px";
+
+        clearInterval(intervalo);
+        for (const card of cards) {
+          card.removeEventListener('click', girarcard);
+       }
 
         btn.addEventListener("click", function() {
           location.reload();
+      });
+      btnAtras.addEventListener("click", function() {
+        window.location = "http://localhost/1rProjecteDAW2b2122/frontend/games.php"
       });
      }
   }
@@ -103,14 +116,22 @@ function finjuegowin() {
       document.getElementById("finjuego").style.display="block";
       document.getElementById("finjuego").innerHTML = "<h1>¡S'ha acabat el temps'! Prova una altra vegada :)</h1> <br>"
       var btn = document.createElement("boton");
-      btn.innerHTML = "Tornar a jugar";                 
+      var btnAtras = document.createElement("boton");
+      btn.innerHTML = "Tornar a jugar <br>";
+
+      btnAtras.innerHTML = "Tornar enrere";                 
       document.getElementById("finjuego").appendChild(btn);
+      document.getElementById("finjuego").appendChild(btnAtras);
 
       btn.style.backgroundColor="#2069a5";
-      btn.style.borderRadius="5px";
+      
+      btnAtras.style.backgroundColor="#2069a5";
 
       btn.addEventListener("click", function() {
         location.reload();
+      });
+      btnAtras.addEventListener("click", function() {
+        window.location = "http://localhost/1rProjecteDAW2b2122/frontend/games.php"
       });
 
       clearInterval(intervalo);
