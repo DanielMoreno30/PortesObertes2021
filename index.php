@@ -1,3 +1,8 @@
+<?php
+    require_once("php_libraries/bd.php");
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="esp">
 

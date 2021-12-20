@@ -9,7 +9,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-            <form class="modal-content">
+            <form class="modal-content" action="php_controllers/usuariosController.php" method="POST">
             <div class="container">
                 <h1 style="font-size: 25px;">Iniciar Sessió</h1>
                 <p>Escriu el teu email i contrasenya per iniciar sessió.</p>
@@ -21,7 +21,7 @@
                 <input type="password" class="inputs" placeholder="Escriu la teva contrasenya" name="pass" required>
 
                 <div class="clearfix">
-                    <button type="submit" class="signup">Iniciar Sessió</button>
+                    <button type="submit" name="iniciarSesion" class="signup">Iniciar Sessió</button> 
                     <button class="gotocreateuser" type="button" data-bs-toggle="modal" data-bs-target="#modalcrearusuario" data-bs-dismiss="modal">No tens compte? Registra't</button>
                 </div>
                 </div>

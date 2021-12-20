@@ -4,6 +4,17 @@
           <a href="../index.php" class="navbar-brand">Portes Obertes</a>
           <div id="main-nav" class="collapse navbar-collapse">
             <ul class="navbar-nav ms-auto">
+              <?php
+                if(isset($_SESSION["idIS"]))
+                {
+                  if($_SESSION["idIS"]["tipo"] == 'A')
+                  {
+              ?>
+                  <li><a href="frontend/administracio.php" class="nav-item nav-link">Admin</a></li>
+              <?php
+                  }
+                }
+              ?>
               <li><a href="../index.php" class="nav-item nav-link active">Inici</a></li>
               <li><a href="./cursos.php" class="nav-item nav-link">Cursos</a></li>
               <li>
