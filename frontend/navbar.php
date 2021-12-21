@@ -12,18 +12,19 @@
           </button>
 			
 			<div id="main-nav" class="collapse navbar-collapse">
-			º		<?php
-						if(isset($_SESSION["idIS"]))
-						{
-							if($_SESSION["idIS"]["tipo"] == 'A')
-							{
-					?>
-							<li><a href="frontend/administracio.php" class="nav-item nav-link">Admin</a></li>
-					<?php
-							}
-						}
-					?>
+					
 				<ul class="navbar-nav ms-auto">
+				<?php
+					if(isset($_SESSION["idIS"]))
+					{
+						if($_SESSION["idIS"]["tipo"] == 'A')
+						{
+				?>
+						<li><a href="./frontend/administracio.php" class="nav-item nav-link">Admin</a></li>
+				<?php
+						}
+					}
+				?>
 					<li><a href="index.php" class="nav-item nav-link active"><?php echo $idioma['NavbarInici'] ?></a></li>
 					<li><a href="frontend/cursos.php" class="nav-item nav-link"><?php echo $idioma['NavbarCursos'] ?></a></li>
 					<li class="dropdown">
@@ -74,7 +75,7 @@
 
 		?>
 		
-			<a href="frontend/logout.php" class="nav-item nav-link" data-toggle="dropdown">Cerrar SesiÃ³n</a>
+			<a href="frontend/logout.php" class="nav-item nav-link" data-toggle="dropdown">Cerrar Sesión</a>
 	<?php
 	}
 	?>

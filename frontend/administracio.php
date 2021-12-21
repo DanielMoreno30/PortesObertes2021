@@ -1,5 +1,7 @@
 <?php
+    
     session_start();
+    include "../php_controllers/configuracionIdiomas.php"; 
 ?>
 
 <!DOCTYPE html>

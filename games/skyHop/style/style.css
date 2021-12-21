@@ -1,6 +1,7 @@
 body {
     background:#7cd1f9 !important;
     font-family: '8-bit' !important;
+    overflow: hidden;
 }
 
 h2 {
@@ -27,7 +28,7 @@ h2 {
 }
 
 .div2{
-    height: 500px;
+    height: 610px;
     padding: 10px;
 }
 
@@ -37,11 +38,13 @@ h2 {
 
 .board {
     position: relative;
-    background-image: url('../images/backgroundFull.png');
+    background-image: url('../images/backgroundFull4.png');
     background-repeat: no-repeat;
     background-position: 0% 100%;
+    border: 4px solid black;
     border-radius: 60px;
 }
+
 
 .character {
     height: 100px;
@@ -151,13 +154,13 @@ div[class^="column4"]{
 }
 
 #virusImage{
-    background-image: url('../images/virus.jpg');
+    background-image: url('../images/lava.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 #keyboardImage{
-    background-image: url('../images/keyboard.png');
+    background-image: url('../images/platform.png');
     background-repeat: no-repeat;
     background-size: cover;
 }

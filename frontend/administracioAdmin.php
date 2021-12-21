@@ -1,6 +1,8 @@
 <?php
+
     require_once("../php_libraries/bd.php");
     session_start();
+    include "../php_controllers/configuracionIdiomas.php"; 
 ?>
 
 <!DOCTYPE html>

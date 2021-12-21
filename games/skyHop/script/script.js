@@ -25,10 +25,12 @@ const BOARD = document.querySelector(".board"),
       FIFTH_TOP = "570px";
 var   speed = 170,
       boxes = document.querySelectorAll('.box'),
-      timer = 30,
+      timer = 40,
       score = 0,
       backgroundPosition = 100,
-      isEnabled = true;
+      isEnabled = false,
+      initial = 0,
+      interval = 250; 
 
 
       COLUMN4P1.setAttribute("id","virusImage");
@@ -60,7 +62,7 @@ function loseMessage(timeout) {
         qualification = "Has sacado un sobresaliente. enhorabuena, pocas personas han llegado hasta aqui. juntando tu excelencia y tu formacion en el cep tendras un futuro prometedor.";
     }
     swal({
-        title: "TU NOTA ES: "+((score+1-timeout)/10),
+        title: "TU NOTA ES: "+(score-timeout),
         text: qualification,
         buttons: {
             cancel: "salir",
@@ -78,7 +80,7 @@ function loseMessage(timeout) {
                 break;
             
             default:
-                window.location = "http://localhost/PROYECTO_GRUP2/1rProjecteDAW2b2122/frontend/games.php"
+                window.location = "http://localhost/1rProjecteDAW2b2122/frontend/games.php"
                 break;
             }
     });
@@ -270,21 +272,83 @@ function endgame() {
 function moveBoxes(){
 
     for (let i = 0; i < NUM_BOXES; i++) {
+        let id = null,
+        initialYPositionP = boxes[i].offsetTop,
+        finalYPosition = initialYPositionP + speed; // offsetTop devuelve la distancia en pixeles entre el elemento y la parte de arriba
+        clearInterval(id);
+        id = setInterval(frame, 0.01);
+        function frame() {
+            if (finalYPosition == initialYPositionP) {
+                clearInterval(id);
+            } else {
+                initialYPositionP = initialYPositionP + 5;
+            }
+            boxes[i].style.top = initialYPositionP + "px"; 
+        }
+    }
+
+/*     for (let i = 0; i < NUM_BOXES; i++) {
         var boxTopPos = boxes[i].offsetTop; // offsetTop devuelve la distancia en pixeles entre el elemento y la parte de arriba
         boxes[i].style.top = (boxTopPos + speed) + "px"; //style.top marca la distancia entre el elemento y la parte de arriba
-    }
-    hideBoxes();
-    moveBoxesUp();
-    createLand();
-    endgame();
+    } */
 }
 
 function moveCharacter(direction){
 
     if (direction == "right") {
-        CHARACTER.style.left = (CHARACTER.offsetLeft + 118) + "px";
+        let id = null,
+        initialXPosition = CHARACTER.offsetLeft,
+        middleXPosition = CHARACTER.offsetLeft + 60,
+        finalXPosition = initialXPosition+118,
+        initialYPosition = CHARACTER.offsetTop;
+        
+        clearInterval(id);
+        id = setInterval(frame, 0.001);
+        function frame() {
+            if (finalXPosition == initialXPosition) {
+                clearInterval(id);
+                hideBoxes();
+                moveBoxesUp();
+                createLand();
+                endgame();
+            } else {
+                initialXPosition = initialXPosition + 2;
+                if (initialXPosition <= middleXPosition) {
+                    initialYPosition--;
+                } else {
+                    initialYPosition++;
+                }
+                CHARACTER.style.left = initialXPosition + "px";
+                CHARACTER.style.top = (initialYPosition) + "px";
+            }
+        }
     } else {
-        CHARACTER.style.left = (CHARACTER.offsetLeft - 118) + "px";
+        let id = null;  
+        let initialXPosition = CHARACTER.offsetLeft,
+        middleXPosition = CHARACTER.offsetLeft - 60,
+        finalXPosition = initialXPosition-118,
+        initialYPosition = CHARACTER.offsetTop;
+        
+        clearInterval(id);
+        id = setInterval(frame, 0.0001);
+        function frame() {
+            if (finalXPosition == initialXPosition) {
+                clearInterval(id);
+                hideBoxes();
+                moveBoxesUp();
+                createLand();
+                endgame();
+            } else {
+                initialXPosition = initialXPosition - 2;
+                if (initialXPosition <= middleXPosition) {
+                    initialYPosition++;
+                } else {
+                    initialYPosition--;
+                }
+                CHARACTER.style.left = initialXPosition + "px";
+                CHARACTER.style.top = (initialYPosition) + "px";
+            }
+        }
     }
 
 }
@@ -304,7 +368,7 @@ function countdown() {
         if (timer > 0) {
             setTimeout(countdown, 1000);
         } else {
-            loseMessage(-1);
+            loseMessage(0);
         }        
     }
 };
@@ -312,18 +376,23 @@ function countdown() {
 
 function control(evento){
 
-    if (isEnabled) {
+    var date = new Date(),
+    milliseconds = date.getTime(); 
+    if((milliseconds - initial) > interval){
+        initial = milliseconds;
+      if (isEnabled) {
         if(evento.keyCode == 39 || evento.keyCode == 68) { //flecha de derecha o d
-            moveCharacter("right");
-            moveBoxes();
-            addScore();
-            moveBackground();
+            setTimeout(moveBoxes, 100);
+            setTimeout(moveCharacter, 100, "right");
+            setTimeout(addScore, 100);
+            setTimeout(moveBackground, 100);
         } else if(evento.keyCode == 37 || evento.keyCode == 65) { //flecha de izquierda o a
-            moveCharacter("left");
-            moveBoxes();
-            addScore();
-            moveBackground();
+            setTimeout(moveBoxes, 100);
+            setTimeout(addScore, 100);
+            setTimeout(moveBackground, 100);
+            setTimeout(moveCharacter, 100, "left");
         }        
+    }
     }
 }
 
@@ -333,6 +402,7 @@ swal({
     button: "EMPEZAR A JUGAR!",
   })
   .then(() => {
+    isEnabled = true;
     countdown();
   });
 

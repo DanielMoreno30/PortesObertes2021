@@ -2,9 +2,18 @@
 
 let valorValido = 0;
 let valorAcertado = 0;
-let status = false;
+let statusRobot = false;
 let intentos = 3;
 const controller = new AbortController();
+
+const frasesPistas = [
+    " Una variable simple es un contenidor on s’emmagatzemen dades senzilles ",
+    " Un operador et permet fer funcions matemátiques als programes",
+    " Una variable complexa es un contenidor on s’emmagatzemen variables senzilles ",
+    " Un prototip es el equivalent a una clase heredada, en comptes de modificar la clase original, es modifica una cópia de la mateixa. ",
+    " Github es un servei públic en el que es pot emmagatzemar aplicacions de forma lliure per a que tot el món pugui accedir ",
+    " L'experiència d'aprendre un llenguatge de programació ens permet aprendre altres molt més rápid. "
+]
 
 
 function cargarDatos(){
@@ -68,11 +77,14 @@ function cargarDatos(){
 
     }
 
-    let modalInicio = new bootstrap.Modal(document.getElementById('modalInicio'), {
-                    keyboard: false
-            });
-                
-    modalInicio.toggle();
+        let modalInicio = new bootstrap.Modal(document.getElementById('modalInicio'), {
+        keyboard: false
+        });
+
+        modalInicio.toggle();
+
+
+
 
     
 
@@ -90,7 +102,7 @@ for (const caja of cajas) {
         let filaColumna = caja.id;
         let valor = calculoFilaColumna(filaColumna);
 
-        if (status === false) {
+        if (statusRobot === false) {
             
         
             if (!caja.classList.contains("animacioMoviment")){
@@ -105,19 +117,22 @@ for (const caja of cajas) {
         }
         else if (valor === 0) {
 
-            document.getElementById("dibujo").setAttribute('src', './media/webApp/muñeco/AnimacionPeligro.gif');
+
+            renovarPista();
+            document.getElementById("dibujo").setAttribute('src', 'media/webApp/muñeco/AnimacionPeligro.gif');
             intentos = intentos - 1;
             document.getElementById("intentosRestantes").innerHTML = "Pistas : " + intentos;
-            status = false;
+            statusRobot = false;
             setTimeout(contadorPista,3000);
 
         }
         else {
 
+            renovarPista();
             document.getElementById("dibujo").setAttribute('src', './media/webApp/muñeco/AnimacionAcierto.gif');
             intentos = intentos - 1;
             document.getElementById("intentosRestantes").innerHTML = "Pistas : " + intentos;
-            status = false;
+            statusRobot = false;
             setTimeout(contadorPista,3000);
         }
             
@@ -201,25 +216,36 @@ document.getElementById("btnJugarDeNuevo").addEventListener("click", function(){
     
 },false); 
 
-/* document.getElementById("btnSortir").addEventListener("click", function(){
+document.getElementById("btnSortir").addEventListener("click", function(){
+
+    location.href='../../frontend/games.php'
 
 
 
     
-},false); */
+},false);
+
+document.getElementById("ayudaJuego").addEventListener("click", function(){
+
+    let myModal = new bootstrap.Modal(document.getElementById('modalAyuda'), {
+        keyboard: false
+    });
+
+    myModal.toggle();
+})
 
 
 document.getElementById("pistaRobot").addEventListener("click", function(){
 
 
     if (intentos != 0){
-        if (status === false){
-        document.getElementById("dibujo").setAttribute('src', './media/webApp/muñeco/Pensando.png');
-        status = true;
+        if (statusRobot === false){
+        document.getElementById("dibujo").setAttribute('src', './media/webApp/muñeco/Pensando.gif');
+        statusRobot = true;
         }
         else {
             document.getElementById("dibujo").setAttribute('src', './media/webApp/muñeco/Normal.png');
-            status = false;
+            statusRobot = false;
         }
 
     }
@@ -231,3 +257,11 @@ document.getElementById("pistaRobot").addEventListener("click", function(){
 
 },false);
 
+function renovarPista (){
+
+    let numeroPistas = frasesPistas.length;
+
+    let pistaAleatoria = Math.floor(Math.random() * numeroPistas);
+    
+    document.getElementById("pistas").innerHTML = frasesPistas[pistaAleatoria];
+}

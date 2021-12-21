@@ -3,6 +3,7 @@
     <div class="container fluid">
           <a href="../index.php" class="navbar-brand"><?php echo $idioma['titol'] ?></a>
           <div id="main-nav" class="collapse navbar-collapse">
+          <ul class="navbar-nav ms-auto">
           <?php
                 if(isset($_SESSION["idIS"]))
                 {
@@ -14,7 +15,7 @@
                   }
                 }
               ?>
-            <ul class="navbar-nav ms-auto">
+            
               <li><a href="../index.php" class="nav-item nav-link active"><?php echo $idioma['NavbarInici'] ?></a></li>
               <li><a href="./cursos.php" class="nav-item nav-link"><?php echo $idioma['NavbarCursos'] ?></a></li>
               <li>
@@ -47,7 +48,7 @@
 
 					?>
 					
-						<a href="frontend/logout.php" class="nav-item nav-link" data-toggle="dropdown">Cerrar Sesión</a>
+						<a href="./logout.php" class="nav-item nav-link" data-toggle="dropdown">Cerrar Sesión</a>
 						<!-- <li>
 								<button type="button" class="btn btn-primary shadow-none" data-bs-toggle="modal" data-bs-target="#modalcerrarsesion" style="border: none; background: transparent; outline: none; margin-top: 8px;">
 								 

@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    require_once("../../php_libraries/bd.php");
+
+    insertJuegoJugado($_SESSION["idIS"]["id_usuario"], 4);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +19,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="row">
+        <div class="row gameTitle">
             <div class="titleGame mt-4 mb-4 pb-5 pt-5">
                 <h1 class="text-center">HASTA EL CIELO</h1>
             </div>
@@ -41,11 +47,28 @@
                 <div class="column1p3 box"></div>
                 <div class="column1p4 box"></div>
                 <div class="character"></div>
+                <div class="modal" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Modal title</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Modal body text goes here.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" onclick="countdown()"  class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" onclick="countdown()" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-2 div3">
                 <div class="col pt-4 time">
                     <h2>TIEMPO:</h2>
-                    <p id="timer">30</p>
+                    <p id="timer">40</p>
                 </div>
             </div>
         </div>

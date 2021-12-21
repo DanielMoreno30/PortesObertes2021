@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    require_once("../../php_libraries/bd.php");
+
+    insertJuegoJugado($_SESSION["idIS"]["id_usuario"], 2);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

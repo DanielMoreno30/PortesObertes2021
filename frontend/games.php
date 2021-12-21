@@ -1,10 +1,14 @@
 <?php
+    include "../php_controllers/configuracionIdiomas.php"; 
     require_once("../php_libraries/bd.php");
     session_start();
 
     $nombresModal = array("One", "Two", "Three", "Four", "Five");
 
-    $juegosJugados = selectJuegosJugadosUnUsuario($_SESSION["idIS"]["id_usuario"]);
+    if(isset($_SESSION["idIS"]))
+    {
+        $juegosJugados = selectJuegosJugadosUnUsuario($_SESSION["idIS"]["id_usuario"]);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +39,7 @@
 ?>
 <!---------------------------------------FINAL NAVBAR-------------------------------------->
 
-    <section id="contentSection" class="content">
+<section id="contentSection" class="content">
         <div class="container pb-4">
             <header>
                 <div class="pb-2 mb-4 rounded-3">
@@ -44,8 +48,8 @@
                 </div>
             </header>
             <div class="row text-center m-3">
-                <div class="col-md-8 col-12">
-                    <div id="carouselExampleControls" class="carousel slide mb-3" data-bs-ride="carousel" data-bs-interval="false">
+                <div class="col-md-12 col-12">
+                    <div id="carouselExampleControls" class="carousel bg-dark rounded-pill slide mb-3" data-bs-ride="carousel" data-bs-interval="false">
                         <div class="carousel-inner">
                         <?php
                             $juegos = selectJuegos();
@@ -54,119 +58,95 @@
                             {
                                 if($juego["id"] == 1)
                                 {
+                                    if(isset($_SESSION["idIS"]["id_usuario"]))
+                                    {
                         ?>
                                     <div class="carousel-item active">
-                                        <a href="<?php echo $juego["url_juego"] ?>" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                            <img src="<?php echo $juego["url_imagen"] ?>" class="d-block w-100" alt="..." height="400px">
-                                        </a>
-                                    </div>
-
-                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered modal-l">
-                                            <div class="modal-content">
-                                                <div class="modal-header text-center">
-                                                    <h1 class="modal-title" id="exampleModalLabel" style="color: #0089ff;">Registre</h1>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <div class="container">
-                                                        <div class="container mt-5 text-start modalRegistre" style="font-size: 1.5rem;">
-                                                            <form action="phpmailer.php" class="row g-3" method="POST">
-                                                                <div class="col-md-12">
-                                                                    <label for="nombre" class="form-label">Nom</label>
-                                                                    <input type="text" class="form-control form-control-lg" name="nombre" id="nombre" required>
-                                                                </div>
-                                                                <div class="col-md-12">
-                                                                    <label for="apellidos" class="form-label">Usuari</label>
-                                                                    <input type="text" class="form-control form-control-lg" name="apellidos" id="apellidos" required>
-                                                                </div>
-                                                                <div class="col-md-12">
-                                                                    <label for="email" class="form-label">E-mail</label>
-                                                                    <input type="email" class="form-control form-control-lg" id="email" name="email" required>
-                                                                </div>
-                                                                <div class="col-md-12">
-                                                                    <label for="email" class="form-label">Gènere</label>
-                                                                    <div class="form-check">
-                                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                                                        <label class="form-check-label" for="flexRadioDefault1">
-                                                                            Home
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="form-check">
-                                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                                                                        <label class="form-check-label" for="flexRadioDefault2">
-                                                                            Dona
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="form-check">
-                                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-                                                                        <label class="form-check-label" for="flexRadioDefault3">
-                                                                            No vull respondre
-                                                                        </label>
-                                                                    </div>
-                                                                </div>
-                                                            </form>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary btn-lg" data-bs-dismiss="modal">Tancar</button>
-                                                    <a href="../games/Patronus/index.html" class="btn btn-primary btn-lg" type="submit" name="submit" id="submit" value="submit">
-                                                        Guardar i jugar
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                        <?php
-                                }
-                                else
-                                {   
-                                    $encontrado = false;
-
-                                    foreach ($juegosJugados as $juegoJugado) 
-                                    {
-                                        if($juegoJugado["juego_id"] == $juego["id"])
-                                        {
-                                            $encontrado = true;
-                                        }
-                                    }
-
-                                    if($encontrado)
-                                    {      
-                        ?>
-                                    <div class="carousel-item">
                                         <a href="<?php echo $juego["url_juego"] ?>" type="button">
                                             <img src="<?php echo $juego["url_imagen"] ?>" class="d-block w-100" alt="..." height="400px">
                                         </a>
                                     </div>
+
+                                    <button onclick="rankingPrevious()" class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button onclick="rankingNext()" class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon bg-dark rounded-circle p-3 fs-1" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
                         <?php
                                     }
                                     else
                                     {
                         ?>
-                                    <div class="carousel-item" style="filter: saturate(0); pointer-events: none; cursor: default;">
-                                        <a href="<?php echo $juego["url_juego"] ?>" type="button" disabled>
-                                            <img src="<?php echo $juego["url_imagen"] ?>" class="d-block w-100" alt="..." height="400px">
+                                    <div class="carousel-item active" style="filter: saturate(0); cursor: default;">
+                                        <a href="#exampleModal" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            <img src="<?php echo $juego["url_imagen"] ?>" class="d-block w-100" alt="..." height="400px" style="z-index: -1;">
                                         </a>
                                     </div> 
+
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered modal-l">
+                                            <div class="modal-content">
+                                                <div class="modal-header text-center">
+                                                    <h1 class="modal-title" id="exampleModalLabel" style="color: #0089ff;">Informació</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Registra't o inicia sessió!
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary btn-lg" data-bs-dismiss="modal">Ok</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                        <?php                        
+                                    }
+                                }
+                                else
+                                {   
+                                    if(isset($juegosJugados))
+                                    {
+                                        $encontrado = false;
+
+                                        foreach ($juegosJugados as $juegoJugado) 
+                                        {
+                                            if($juegoJugado["juego_id"] == $juego["id"])
+                                            {
+                                                $encontrado = true;
+                                            }
+                                        }
+
+                                        if($encontrado)
+                                        {                                        
+                        ?>
+                                        <div class="carousel-item">
+                                            <a href="<?php echo $juego["url_juego"] ?>" type="button">
+                                                <img src="<?php echo $juego["url_imagen"] ?>" class="d-block w-100" alt="..." height="400px">
+                                            </a>
+                                        </div>
                         <?php
+                                        }
+                                        else
+                                        {
+                        ?>
+                                        <div class="carousel-item" style="filter: saturate(0); pointer-events: none; cursor: default;">
+                                            <a href="<?php echo $juego["url_juego"] ?>" type="button" disabled>
+                                                <img src="<?php echo $juego["url_imagen"] ?>" class="d-block w-100" alt="..." height="400px">
+                                            </a>
+                                        </div> 
+                        <?php
+                                        }
                                     }
                                 }
                             }
                         ?>
                         </div>
-                        <button onclick="rankingPrevious()" class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button onclick="rankingNext()" class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
                     </div>
                 </div>
-                <div id="carouselExampleControls2" class="carousel slide col-md-4 col-1" data-bs-ride="carousel" data-bs-interval="false" style="height: 400px;">
+                <div id="carouselExampleControls2" class="carousel slide col-md-4 col-1" data-bs-ride="carousel" data-bs-interval="false" style="height: 400px; display: none;">
                     <div class="carousel-inner h-100">
                         <?php
                             for ($i = 0; $i < 5; $i++) 
