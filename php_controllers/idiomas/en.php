@@ -11,7 +11,7 @@
         "NavbarContacte" => "Contact",
 
         //Página Principal
-        "titolCar" => "We welcome you to the Politécnics!",
+        "titolCar" => "We welcome you to the Politècnics!",
         "pIndex1" => "At the Centre d'Estudis Politècnics we teach Vocational Education and Training (VET) and Certificate of Higher Education (HNC) in the specialties of 
         trade and marketing, administration and finance, information technology, tourism, and event management.",
         "pIndex2" => "Our mission is the growth of student knowledge. We ensure the achievement of their professional skills and personal skills that companies and 

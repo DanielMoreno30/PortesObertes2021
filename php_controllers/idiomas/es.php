@@ -11,7 +11,7 @@ $idioma = array(
     "NavbarContacte" => "Contacto",
 
     //Página Principal
-    "titolCar" => "¡Os damos la bienvenida al Politécnics!",
+    "titolCar" => "¡Os damos la bienvenida al Politècnics!",
     "pIndex1" => "En el Centre d’Estudis Politècnics impartimos ciclos formativos de grado medio y grado superior de las especialidades de comercio y marketing, 
     de administración y finanzas, de informática y de turismo y gestión de eventos.",
     "pIndex2" => "Nuestra misión es el crecimiento del alumnado. Velamos por la consecución de sus competencias profesionales y habilidades 

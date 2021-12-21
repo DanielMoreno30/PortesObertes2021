@@ -34,7 +34,7 @@
     <div class="container">
         <header class="jumbotron my-4">
             <center>
-                <h1 style="color: #0089ff; font-family: 'Montserrat'; letter-spacing: 10px;" class="display-3">FORMULARI DE CONTACTE</h1>
+                <h1 style="color: #0089ff; font-family: 'Montserrat'; letter-spacing: 10px;" class="display-3"><?php echo $idioma['ContacteTitol'] ?></h1>
             </center>
         </header>
         <div class="container mt-5" style="width: 80%;">

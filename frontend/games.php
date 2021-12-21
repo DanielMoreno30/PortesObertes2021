@@ -44,7 +44,7 @@
             <header>
                 <div class="pb-2 mb-4 rounded-3">
                     <div class="container-fluid py-5">
-                        <h1 class="display-5 text-center" style="color: #0089ff; font-size: 5rem; font-family: 'Montserrat'; letter-spacing: 10px;">Jocs</h1>
+                        <h1 class="display-5 text-center" style="color: #0089ff; font-size: 5rem; font-family: 'Montserrat'; letter-spacing: 10px;"><?php echo $idioma['NavbarJocs'] ?></h1>
                 </div>
             </header>
             <div class="row text-center m-3">
