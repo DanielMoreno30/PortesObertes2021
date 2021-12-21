@@ -9,7 +9,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-            <form class="modal-content" action="./php_controllers/usuariosController.php" method="POST">
+            <form class="modal-content" action="/1rProjecteDAW2b2122/php_controllers/usuariosController.php" method="POST">
             <div class="container">
                 <h1 style="font-size: 25px;"><?php echo $idioma['iniciarSessio'] ?></h1>
                 <p><?php echo $idioma['iniciarSessioP'] ?></p>
@@ -38,7 +38,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-            <form class="modal-content" action="php_controllers/usuariosController.php" method="POST">
+            <form class="modal-content" action="/1rProjecteDAW2b2122/php_controllers/usuariosController.php" method="POST">
                 <div class="container">
                     <h1><?php echo $idioma['crearUsuari'] ?></h1>
                     <p><?php echo $idioma['crearUsuariP'] ?></p>

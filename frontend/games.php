@@ -1,7 +1,7 @@
 <?php
-    include "../php_controllers/configuracionIdiomas.php"; 
     require_once("../php_libraries/bd.php");
     session_start();
+    include "../php_controllers/configuracionIdiomas.php";
 
     $nombresModal = array("One", "Two", "Three", "Four", "Five");
 
@@ -49,7 +49,7 @@
             </header>
             <div class="row text-center m-3">
                 <div class="col-md-12 col-12">
-                    <div id="carouselExampleControls" class="carousel bg-dark rounded-pill slide mb-3" data-bs-ride="carousel" data-bs-interval="false">
+                    <div id="carouselExampleControls" class="carousel bg-dark slide mb-3" data-bs-ride="carousel" data-bs-interval="false">
                         <div class="carousel-inner">
                         <?php
                             $juegos = selectJuegos();
