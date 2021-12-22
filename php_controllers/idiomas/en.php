@@ -129,6 +129,7 @@
         "ContacteTelefon" => "Phone Number",
         "ContacteQuePassa" => "What's Wrong?",
         "ContacteEnviarFormulari" => "Send Form",
+        "ContacteCancelar" => "Cancel",
 
         //Login
         "iniciarSessio" => "Log in",

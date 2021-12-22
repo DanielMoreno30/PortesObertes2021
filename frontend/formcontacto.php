@@ -60,8 +60,8 @@
             <textarea class="form-control form-control-lg" name="mensaje" id="mensaje" rows="3" required></textarea>
           </div>
           <div class="col-md-12">
-            <button type="submit" name="submit" id="submit" value="submit" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modalformcontacto">Enviar Formulari</button>  
-            <button type="submit" name="cancel" id="cancel" value="cancel" class="btn btn-danger btn-lg">Cancel·lar</button>
+            <button type="submit" name="submit" id="submit" value="submit" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modalformcontacto"><?php echo $idioma['ContacteEnviarFormulari'] ?></button>  
+            <button type="submit" name="cancel" id="cancel" value="cancel" class="btn btn-danger btn-lg"><?php echo $idioma['ContacteCancelar'] ?></button>
           </div>
         </form>
     </div>

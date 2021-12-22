@@ -97,7 +97,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `portesObertes`;
-INSERT INTO `portesObertes`.`juegos` (`id`, `nombre`, `url_juego`, `url_imagen`) VALUES (1, 'JuegoSebas', '../games/Patronus/index.html', '../img/patronus.gif');
+INSERT INTO `portesObertes`.`juegos` (`id`, `nombre`, `url_juego`, `url_imagen`) VALUES (1, 'JuegoSebas', '../games/Patronus/index.php', '../img/patronus.gif');
 INSERT INTO `portesObertes`.`juegos` (`id`, `nombre`, `url_juego`, `url_imagen`) VALUES (2, 'JuegoDani', '../games/memory/memory.php', '../img/juego2.png');
 INSERT INTO `portesObertes`.`juegos` (`id`, `nombre`, `url_juego`, `url_imagen`) VALUES (3, 'JuegoOscar', '../games/skyHop/index.php', '../img/juego3.gif');
 INSERT INTO `portesObertes`.`juegos` (`id`, `nombre`, `url_juego`, `url_imagen`) VALUES (4, 'JuegoPablo', '../games/PacmanJuego/pacman.php', '../img/juego4.PNG');
@@ -111,9 +111,9 @@ COMMIT;
 START TRANSACTION;
 USE `portesObertes`;
 INSERT INTO `portesObertes`.`usuarios` (`nombre_usuario`, `password`, `nombre`, `apellidos`, `correo`, `tipo`) 
-VALUES ('admin', 'politecnics1', 'S', 'G', 'afsd@gmail.com', 'A');
+VALUES ('admin', '$2y$10$Qu3SR0WYbYW.CCq/2.5fS.TmdubZoPqk0VXGgGyrUEi7J5peKV7we', 'S', 'G', 'afsd@gmail.com', 'A');
 INSERT INTO `portesObertes`.`usuarios` (`nombre_usuario`, `password`, `nombre`, `apellidos`, `correo`, `tipo`) 
-VALUES ('Oscar', 'politecnics1', 'S', 'G', 'affsd@gmail.com', 'N');
+VALUES ('Oscar', '$2y$10$Qu3SR0WYbYW.CCq/2.5fS.TmdubZoPqk0VXGgGyrUEi7J5peKV7we', 'S', 'G', 'affsd@gmail.com', 'N');
 INSERT INTO `portesObertes`.`usuarios` (`nombre_usuario`, `password`, `nombre`, `apellidos`, `correo`, `tipo`) 
 VALUES ('Sebas', 'politecnics1', 'S', 'G', 'afssd@gmail.com', 'N');
 INSERT INTO `portesObertes`.`usuarios` (`nombre_usuario`, `password`, `nombre`, `apellidos`, `correo`, `tipo`) 

@@ -122,6 +122,7 @@ $idioma = array(
     "ContacteTelefon" => "Teléfono",
     "ContacteQuePassa" => "Qué pasa?",
     "ContacteEnviarFormulari" => "Enviar formulario",
+    "ContacteCancelar" => "Cancelar",
 
     //Login
     "iniciarSessio" => "Iniciar Sesión",

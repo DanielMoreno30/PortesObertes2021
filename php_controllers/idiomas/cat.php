@@ -135,6 +135,7 @@
         "ContacteTelefon" => "Teléfon",
         "ContacteQuePassa" => "Qué passa?",
         "ContacteEnviarFormulari" => "Enviar formulari",
+        "ContacteCancelar" => "Cancel·lar",
         
         //Login
         "iniciarSessio" => "Iniciar Sessió",

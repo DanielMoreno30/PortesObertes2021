@@ -138,7 +138,7 @@
             <div class= "p-5"> 
               <img src="./img/noTincNiIdea.jpg" class="imgOrientacio" width="200" height="auto" alt="fraseImg"> </div>
             <p style="text-align: center;">
-              <?php echo $idioma['pIdea'] ?>
+            <a style="color:black;" href="./frontend/cursos.php#familiaHT" class="nav-item nav-link"><?php echo $idioma['pIdea'] ?></a>               
             </p>
           </div>
           <!-----------------SE QUINA RAMA VULL---------------->
@@ -152,12 +152,18 @@
 
             <div class="container" style="text-align:center">
               <div class="row offset-md-2">
-                <div class="bg-danger col-12 col-md-5  m-2 " style="color:white; font-size:12px;"><?php echo $idioma['comerç'] ?></div>
+                <div class="bg-danger col-12 col-md-5 m-2">
+                  <a style="color:white; font-size:12px;" href="./frontend/cursos.php#familiaCM" class="nav-item nav-link"><?php echo $idioma['comerç'] ?></a>       
+                </div>  
+                <div class="bg-primary col-12 col-md-5 m-2">
+                  <a style="color:white; font-size:12px;" href="./frontend/cursos.php#familiaHT" class="nav-item nav-link"><?php echo $idioma['hosteleria'] ?></a>       
+                </div>
 
-                <div class="bg-primary col-12 col-md-5 m-2" style="color:white; font-size:12px;"><?php echo $idioma['hosteleria'] ?></div>                
-                <div class="bg-warning col-12 col-md-5 m-2" style="color:white; font-size:12px;"><?php echo $idioma['informàtica'] ?></div>
-
-                <div class="bg-success col-12 col-md-5 m-2  " style="color:white; font-size:12px;" href="./frontend/cursos.php#familiaIC"><?php echo $idioma['gestió'] ?>
+                <div class="bg-warning col-12 col-md-5 m-2">
+                  <a style="color:white; font-size:12px;" href="./frontend/cursos.php#familiaIC" class="nav-item nav-link"><?php echo $idioma['informàtica'] ?></a>       
+                </div>
+                <div class="bg-success col-12 col-md-5 m-2">
+                  <a style="color:white; font-size:12px;" href="./frontend/cursos.php#familiaAG" class="nav-item nav-link"><?php echo $idioma['gestió'] ?></a>       
                 </div>
               </div>
             </div>
