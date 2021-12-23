@@ -1638,6 +1638,7 @@
     bottom: 0;
     text-align: center;
     letter-spacing: 2px;
+    text-decoration: none;
 }
 
 /* Diseño de la burbuja de refrescar la pantalla */

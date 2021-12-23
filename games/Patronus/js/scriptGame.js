@@ -1043,218 +1043,208 @@ function contadorAtras()
                 }, 1000);
             }
         }
-    }, 4000);
 
-    setTimeout(function()
-    {
-        if(!dead)
+        setTimeout(function()
         {
-            //Cuando pasen 71 segundos desde que ha empezado el juego:
-            setTimeout(function()
+            if(!dead)
             {
                 //Ocultamos los obstaculos número 1 y número 2 y les quitamos las animaciones
                 obstaculo1.style.display = "none";
                 obstaculo2.style.display = "none";
-                obstaculo1.style.animation = "none";
-                obstaculo2.style.animation = "none";
+                obstaculo1.style.animationPlayState = "paused";
+                obstaculo2.style.animationPlayState = "paused";
                 
-                //Ocultamos y le quitamos la animación al agujero número 1
-                agujero1.style.display = "none";
-                agujero1.style.animation = "none";
-            }, 1000);
+                agujero1.style.animationPlayState = "paused";
 
-            //Cuando pasen 73 segundos desde que ha empezado el juego:
-            setTimeout(function()
-            {
-                //Ocultamos los obstaculos número 3 y número 4 y les quitamos las animaciones
-                obstaculo3.style.display = "none";
-                obstaculo4.style.display = "none";
-                obstaculo3.style.animation = "none";
-                obstaculo4.style.animation = "none";
-
-                //Ocultamos y le quitamos la animación al agujero número 2
-                agujero2.style.display = "none";
-                agujero2.style.animation = "none";
-            }, 3000);
-
-            //Cuando pasen 70 segundos desde que ha empezado el juego:
-            setTimeout(function()
-            {
-                //Pausamos la animación del suelo y establecemos la posición de la barra de progreso
-                suelo.style.animationPlayState = "paused";
-                colorProgreso.style.right = "0%";
-                colorProgreso.style.backgroundColor = "#08fbe3";
-
-                //Ocultamos los obstaculos número 5 y número 6 y les quitamos las animaciones
-                obstaculo5.style.display = "none";
-                obstaculo6.style.display = "none";
-                obstaculo5.style.animation = "none";
-                obstaculo6.style.animation = "none";
-
-                //Ocultamos y le quitamos la animación al agujero número 2
-                agujero3.style.display = "none";
-                agujero3.style.animation = "none";
-
-                //Borramos el intervalo que detecta colisiones para que se pueda realizar
-                //la animación que viene a continuación, si no borramos este intervalo se detectan
-                //colisiones y el fantasma muere durante la animación
-                clearInterval(muerto);
-
-                //Desactivamos la tecla 'espacio' para que el usuario no pueda interferir en la animación,
-                //si no la desactivamos y el usuario decide usarla, peta la animación.
-                document.body.onkeyup = function(e)
+                //Cuando pasen 73 segundos desde que ha empezado el juego:
+                setTimeout(function()
                 {
-                    if(e.keyCode == 32){
-                        return false;
+                    //Ocultamos los obstaculos número 3 y número 4 y les quitamos las animaciones
+                    obstaculo3.style.display = "none";
+                    obstaculo4.style.display = "none";
+                    obstaculo3.style.animationPlayState = "paused";
+                    obstaculo4.style.animationPlayState = "paused";
+
+                    agujero2.style.animationPlayState = "paused";
+                }, 3000);
+
+                //Cuando pasen 70 segundos desde que ha empezado el juego:
+                setTimeout(function()
+                {
+                    //Pausamos la animación del suelo y establecemos la posición de la barra de progreso
+                    suelo.style.animationPlayState = "paused";
+                    colorProgreso.style.right = "0%";
+                    colorProgreso.style.backgroundColor = "#08fbe3";
+
+                    //Ocultamos los obstaculos número 5 y número 6 y les quitamos las animaciones
+                    obstaculo5.style.display = "none";
+                    obstaculo6.style.display = "none";
+                    obstaculo5.style.animationPlayState = "paused";
+                    obstaculo6.style.animationPlayState = "paused";
+
+                    agujero3.style.animationPlayState = "paused";
+
+                    //Borramos el intervalo que detecta colisiones para que se pueda realizar
+                    //la animación que viene a continuación, si no borramos este intervalo se detectan
+                    //colisiones y el fantasma muere durante la animación
+                    clearInterval(muerto);
+
+                    //Desactivamos la tecla 'espacio' para que el usuario no pueda interferir en la animación,
+                    //si no la desactivamos y el usuario decide usarla, peta la animación.
+                    document.body.onkeyup = function(e)
+                    {
+                        if(e.keyCode == 32){
+                            return false;
+                        }
                     }
-                }
-            }, 5000);
+                }, 5000);
 
-            //Cuando pasen 72 segundos desde que ha empezado el juego:
-            setTimeout(function()
-            {   
-                //Le añadimos esta animación a la burbuja para que aparezca en pantalla y
-                //le establecemos el valor de la opacidad que queremos que tenga al final de 
-                //la animación.
-                burbuja3.classList.add("animationBurbuja1");
-                burbuja3.style.opacity = "1";
-            }, 7000);
+                //Cuando pasen 72 segundos desde que ha empezado el juego:
+                setTimeout(function()
+                {   
+                    //Le añadimos esta animación a la burbuja para que aparezca en pantalla y
+                    //le establecemos el valor de la opacidad que queremos que tenga al final de 
+                    //la animación.
+                    burbuja3.classList.add("animationBurbuja1");
+                    burbuja3.style.opacity = "1";
+                }, 7000);
 
-            //Cuando pasen 73 segundos desde que ha empezado el juego:
-            setTimeout(function()
-            {   
-                //Borramos el intervalo de gravedad, cuando el 
-                //fantasma entra o desaparece en el portal se encoge hasta desaparecer y
-                //al encogerse, este intervalo lo hace bajar hasta salir de la pantalla, por lo tanto
-                //peta la animación. 
-                clearInterval(intervaloGravedad);
-            }, 8000);
+                //Cuando pasen 73 segundos desde que ha empezado el juego:
+                setTimeout(function()
+                {   
+                    //Borramos el intervalo de gravedad, cuando el 
+                    //fantasma entra o desaparece en el portal se encoge hasta desaparecer y
+                    //al encogerse, este intervalo lo hace bajar hasta salir de la pantalla, por lo tanto
+                    //peta la animación. 
+                    clearInterval(intervaloGravedad);
+                }, 8000);
 
-            //Cuando pasen 74 segundos desde que ha empezado el juego:
-            setTimeout(function()
-            {   
-                //Le añadimos esta animación al portal final para que aparezca en pantalla
-                //y establecemos los valores de anchura y altura que queremos que tenga 
-                //al final de la animación.
-                portalFinal.classList.add("animationPortalFinal");
-                portalFinal.style.width = "10%";
-                portalFinal.style.height = "30%";
+                //Cuando pasen 74 segundos desde que ha empezado el juego:
+                setTimeout(function()
+                {   
+                    //Le añadimos esta animación al portal final para que aparezca en pantalla
+                    //y establecemos los valores de anchura y altura que queremos que tenga 
+                    //al final de la animación.
+                    portalFinal.classList.add("animationPortalFinal");
+                    portalFinal.style.width = "10%";
+                    portalFinal.style.height = "30%";
 
-                //Le añadimos esta animación al fantasma para que se vaya encima del portal y
-                //establecemos el valor de 'left' que queremos que tenga al final de la animación.
-                fantasma.classList.add("animationFantasma2");
-                fantasma.style.left = "88%";
-            }, 9000);
+                    //Le añadimos esta animación al fantasma para que se vaya encima del portal y
+                    //establecemos el valor de 'left' que queremos que tenga al final de la animación.
+                    fantasma.classList.add("animationFantasma2");
+                    fantasma.style.left = "88%";
+                }, 9000);
 
-            //Cuando pasen 76 segundos desde que ha empezado el juego:
-            setTimeout(function()
-            {  
-                //Al fantasma le quitamos la animación anterior y le añadimos esta para que desaparezca
-                //o entre en el portal y establecemos los valores de anchura y altura que queremos que tenga
-                //al final de la animación
-                fantasma.classList.remove("animationFantasma2");
-                fantasma.classList.add("animationFantasma3");
-                fantasma.style.width = "0%";
-                fantasma.style.height = "0%";
+                //Cuando pasen 76 segundos desde que ha empezado el juego:
+                setTimeout(function()
+                {  
+                    //Al fantasma le quitamos la animación anterior y le añadimos esta para que desaparezca
+                    //o entre en el portal y establecemos los valores de anchura y altura que queremos que tenga
+                    //al final de la animación
+                    fantasma.classList.remove("animationFantasma2");
+                    fantasma.classList.add("animationFantasma3");
+                    fantasma.style.width = "0%";
+                    fantasma.style.height = "0%";
 
-                //Guardamos el momento en el que el usuario acaba la partida:
-                end = new Date().getTime();
-            }, 11000);
+                    //Guardamos el momento en el que el usuario acaba la partida:
+                    end = new Date().getTime();
+                }, 11000);
 
-            //Cuando pasen 78 segundos desde que ha empezado el juego:
-            setTimeout(function()
-            {   
-                //Al portal le quitamos la animación anterior y le añadimos esta para que desaparezca
-                //y establecemos los valores de anchura y altura que queremos que tenga al final de 
-                //la animación.
-                portalFinal.classList.remove("animationPortalFinal");
-                portalFinal.classList.add("animationPortalFinal1");
-                portalFinal.style.width = "0%";
-                portalFinal.style.height = "0%";
+                //Cuando pasen 78 segundos desde que ha empezado el juego:
+                setTimeout(function()
+                {   
+                    //Al portal le quitamos la animación anterior y le añadimos esta para que desaparezca
+                    //y establecemos los valores de anchura y altura que queremos que tenga al final de 
+                    //la animación.
+                    portalFinal.classList.remove("animationPortalFinal");
+                    portalFinal.classList.add("animationPortalFinal1");
+                    portalFinal.style.width = "0%";
+                    portalFinal.style.height = "0%";
 
-                //Al marcador le añadimos la animación de desaparecer y establecemos el valor de opacidad
-                //que queremos que tenga al final de la animación.
-                marcador.classList.remove("animationMarcador");
-                marcador.classList.add("animationMarcador1");
-                marcador.style.opacity = 0; 
+                    //Al marcador le añadimos la animación de desaparecer y establecemos el valor de opacidad
+                    //que queremos que tenga al final de la animación.
+                    marcador.classList.remove("animationMarcador");
+                    marcador.classList.add("animationMarcador1");
+                    marcador.style.opacity = 0; 
 
-                progreso.classList.add("animationProgreso1");
-                colorProgreso.classList.remove("animationProgreso");
-                colorProgreso.classList.add("animationProgreso1");
-                cielo.classList.add("animationCielo");
-                cielo.style.opacity = "0";
-            }, 13000);
+                    progreso.classList.add("animationProgreso1");
+                    colorProgreso.classList.remove("animationProgreso");
+                    colorProgreso.classList.add("animationProgreso1");
+                    cielo.classList.add("animationCielo");
+                    cielo.style.opacity = "0";
+                }, 13000);
 
-            //Cuando pasen 78 segundos desde que ha empezado el juego:
-            setTimeout(function()
-            {                   
-                suelo.style.display = "none";
-                progreso.style.display = "none";
-                colorProgreso.style.display = "none";
+                //Cuando pasen 78 segundos desde que ha empezado el juego:
+                setTimeout(function()
+                {                   
+                    suelo.style.display = "none";
+                    progreso.style.display = "none";
+                    colorProgreso.style.display = "none";
 
-                for(var nube of nubes)
-                {
-                    nube.style.display = "none";
-                }
+                    for(var nube of nubes)
+                    {
+                        nube.style.display = "none";
+                    }
 
-                for(var estrella of estrellas)
-                {
-                    estrella.style.display = "none";
-                }
+                    for(var estrella of estrellas)
+                    {
+                        estrella.style.display = "none";
+                    }
 
-                cielo.style.background = "url(../media/centro2.jpg)";
-                cielo.style.backgroundSize = "cover";
-                cielo.style.backgroundRepeat = "no-repeat";
-                cielo.style.backgroundPosition = "bottom";
-                cielo.style.width = "100%";
-                cielo.style.height = "100%";
-            }, 15000);
+                    cielo.style.background = "url(../media/centro2.jpg)";
+                    cielo.style.backgroundSize = "cover";
+                    cielo.style.backgroundRepeat = "no-repeat";
+                    cielo.style.backgroundPosition = "bottom";
+                    cielo.style.width = "100%";
+                    cielo.style.height = "100%";
+                }, 15000);
 
-            //Cuando pasen 78 segundos desde que ha empezado el juego:
-            setTimeout(function()
-            {                   
-                cielo.classList.remove("animationCielo");
-                cielo.classList.add("animationCielo1");
-                cielo.style.opacity = "1";
-               
-                fantasma.style.width = "20%";
-                fantasma.style.height = "30%";
-                fantasma.style.top = "50%";
-                fantasma.style.left = "4%";
+                //Cuando pasen 78 segundos desde que ha empezado el juego:
+                setTimeout(function()
+                {                   
+                    cielo.classList.remove("animationCielo");
+                    cielo.classList.add("animationCielo1");
+                    cielo.style.opacity = "1";
+                
+                    fantasma.style.width = "20%";
+                    fantasma.style.height = "30%";
+                    fantasma.style.top = "50%";
+                    fantasma.style.left = "4%";
 
-                fantasma.classList.remove("animationFantasma3");
-                fantasma.classList.add("animationFantasma");
+                    fantasma.classList.remove("animationFantasma3");
+                    fantasma.classList.add("animationFantasma");
 
-                //Función para guardar los resultados
-                mostrarResultados();
+                    //Función para guardar los resultados
+                    mostrarResultados();
 
-                //Al botón de refrescar le añadimos la animación de aparecer y establecemos los valores de opacidad,
-                //display y cursor, que queremos que tenga al final de la animación
-                botonRefrescar.classList.add("animationBurbujaRefrescar");
-                botonRefrescar.style.opacity = "1";
-                botonRefrescar.style.display = "flex";
-                botonRefrescar.style.cursor = "pointer";
-            }, 16000);
+                    //Al botón de refrescar le añadimos la animación de aparecer y establecemos los valores de opacidad,
+                    //display y cursor, que queremos que tenga al final de la animación
+                    botonRefrescar.classList.add("animationBurbujaRefrescar");
+                    botonRefrescar.style.opacity = "1";
+                    botonRefrescar.style.display = "flex";
+                    botonRefrescar.style.cursor = "pointer";
+                }, 16000);
 
-            setTimeout(function()
-            { 
-                fondoBorroso.classList.add("animationFondoBorroso");
-                fondoBorroso.style.opacity = "0.6";
-                fondoBorroso.style.filter = "blur(1.5rem)";
+                setTimeout(function()
+                { 
+                    fondoBorroso.classList.add("animationFondoBorroso");
+                    fondoBorroso.style.opacity = "0.6";
+                    fondoBorroso.style.filter = "blur(1.5rem)";
 
-                //Al cuadro de resultados le añadimos la animación de aparecer y establecemos el valor de opacidad
-                //que queremos que tenga al final de la animación.
-                resumen.classList.add("animationResumen");
-                resumen.style.opacity = "1";
-                resumen.style.zIndex = "999";
+                    //Al cuadro de resultados le añadimos la animación de aparecer y establecemos el valor de opacidad
+                    //que queremos que tenga al final de la animación.
+                    resumen.classList.add("animationResumen");
+                    resumen.style.opacity = "1";
+                    resumen.style.zIndex = "999";
 
-                for(var familia of familiaCursos)
-                {
-                    familia.style.fontSize = "20px";
-                }
-            }, 18000);
-        }
-    }, 65000);
+                    for(var familia of familiaCursos)
+                    {
+                        familia.style.fontSize = "20px";
+                    }
+                }, 18000);
+            }
+        }, 62000);
+    }, 4000);
 
     //Funcion para mostrar el resultado:
     function mostrarResultados()
