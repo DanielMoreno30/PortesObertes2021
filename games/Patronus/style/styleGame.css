@@ -1638,6 +1638,10 @@
     bottom: 0;
     text-align: center;
     letter-spacing: 2px;
+}
+
+.enlaceCursos
+{
     text-decoration: none;
 }
 

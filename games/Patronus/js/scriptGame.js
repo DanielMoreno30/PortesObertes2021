@@ -1048,25 +1048,45 @@ function contadorAtras()
         {
             if(!dead)
             {
-                //Ocultamos los obstaculos número 1 y número 2 y les quitamos las animaciones
-                obstaculo1.style.display = "none";
-                obstaculo2.style.display = "none";
-                obstaculo1.style.animationPlayState = "paused";
-                obstaculo2.style.animationPlayState = "paused";
-                
-                agujero1.style.animationPlayState = "paused";
+                //FIRST OPTION
+                //obstaculo1.style.animation = "paused";
+                //obstaculo2.style.animation = "paused";
+            
+                //agujero1.style.animation = "paused";
+
+                //SECOND OPTION
+                //obstaculo1.style.animationPlayState = "paused";
+                //obstaculo2.style.animationPlayState = "paused";
+
+                //agujero1.style.animationPlayState = "paused";
+
+                //THIRD OPTION
+                obstaculo1.classList.remove("animationObstaculo");
+                obstaculo2.classList.remove("animationObstaculo");
+            
+                agujero1.classList.remove("animationObstaculo");
 
                 //Cuando pasen 73 segundos desde que ha empezado el juego:
                 setTimeout(function()
                 {
-                    //Ocultamos los obstaculos número 3 y número 4 y les quitamos las animaciones
-                    obstaculo3.style.display = "none";
-                    obstaculo4.style.display = "none";
-                    obstaculo3.style.animationPlayState = "paused";
-                    obstaculo4.style.animationPlayState = "paused";
+                    //FIRST OPTION
+                    //obstaculo3.style.animation = "paused";
+                    //obstaculo4.style.animation = "paused";
+                
+                    //agujero2.style.animation = "paused";
 
-                    agujero2.style.animationPlayState = "paused";
-                }, 3000);
+                    //SECOND OPTION
+                    //obstaculo3.style.animationPlayState = "paused";
+                    //obstaculo4.style.animationPlayState = "paused";
+
+                    //agujero2.style.animationPlayState = "paused";
+
+                    //THIRD OPTION
+                    obstaculo3.classList.remove("animationObstaculo");
+                    obstaculo4.classList.remove("animationObstaculo");
+                
+                    agujero2.classList.remove("animationObstaculo");
+                }, 2000);
 
                 //Cuando pasen 70 segundos desde que ha empezado el juego:
                 setTimeout(function()
@@ -1077,12 +1097,26 @@ function contadorAtras()
                     colorProgreso.style.backgroundColor = "#08fbe3";
 
                     //Ocultamos los obstaculos número 5 y número 6 y les quitamos las animaciones
-                    obstaculo5.style.display = "none";
-                    obstaculo6.style.display = "none";
-                    obstaculo5.style.animationPlayState = "paused";
-                    obstaculo6.style.animationPlayState = "paused";
+                    //obstaculo5.style.display = "none";
+                    //obstaculo6.style.display = "none";
 
-                    agujero3.style.animationPlayState = "paused";
+                    //FIRST OPTION
+                    //obstaculo5.style.animation = "paused";
+                    //obstaculo6.style.animation = "paused";
+                
+                    //agujero3.style.animation = "paused";
+
+                    //SECOND OPTION
+                    //obstaculo5.style.animationPlayState = "paused";
+                    //obstaculo6.style.animationPlayState = "paused";
+
+                    //agujero3.style.animationPlayState = "paused";
+
+                    //THIRD OPTION
+                    obstaculo5.classList.remove("animationObstaculo");
+                    obstaculo6.classList.remove("animationObstaculo");
+                
+                    agujero3.classList.remove("animationObstaculo");
 
                     //Borramos el intervalo que detecta colisiones para que se pueda realizar
                     //la animación que viene a continuación, si no borramos este intervalo se detectan
@@ -1097,7 +1131,7 @@ function contadorAtras()
                             return false;
                         }
                     }
-                }, 5000);
+                }, 4000);
 
                 //Cuando pasen 72 segundos desde que ha empezado el juego:
                 setTimeout(function()
@@ -1230,7 +1264,7 @@ function contadorAtras()
                     fondoBorroso.classList.add("animationFondoBorroso");
                     fondoBorroso.style.opacity = "0.6";
                     fondoBorroso.style.filter = "blur(1.5rem)";
-
+                    
                     //Al cuadro de resultados le añadimos la animación de aparecer y establecemos el valor de opacidad
                     //que queremos que tenga al final de la animación.
                     resumen.classList.add("animationResumen");
@@ -1239,7 +1273,7 @@ function contadorAtras()
 
                     for(var familia of familiaCursos)
                     {
-                        familia.style.fontSize = "20px";
+                        familia.style.fontSize = "18px";
                     }
                 }, 18000);
             }
