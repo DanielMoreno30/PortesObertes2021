@@ -7,6 +7,11 @@ let primeracard, segundaCard;
 var puntuacion = 0;
 var tiempo = 0;
 var intervalo = 0;
+var cerrarmodalinicio = document.getElementById('cerrarmodalinicio');
+var cerrarmodalvictoria = document.getElementById('cerrarmodalvictoria');
+var cerrarmodalderrota = document.getElementById('cerrarmodalderrota');
+
+var volverajuegos = document.getElementById('volverajuegos');
 
 var btn = document.createElement("boton");
 
@@ -82,64 +87,43 @@ function resetBoard() {
 
 function finjuegowin() {
   if (puntuacion === 600) {
-      document.getElementById("finjuego").style.display="block";
-      document.getElementById("finjuego").innerHTML =
-        "<h1>¡Has guanyat! ¡Enhorabona i a per el seguent joc!</h1> <br>"
-        var btn = document.createElement("boton");
-        var btnAtras = document.createElement("boton");
-        btn.innerHTML = "Tornar a jugar <br>";
-        btnAtras.innerHTML = "Tornar enrere";              
-        document.getElementById("finjuego").appendChild(btn);
-        document.getElementById("finjuego").appendChild(btnAtras);
+      document.getElementById("modalvictoria").style.display = "block";
 
-        btn.style.backgroundColor="#2069a5";
-        btn.style.borderRadius="5px";
-        btnAtras.style.backgroundColor="#2069a5";
-        btnAtras.style.borderRadius="5px";
+      cerrarmodalvictoria.addEventListener("click", function() {
+      document.getElementById("modalvictoria").style.display = "none";
+      location.reload();
+    });
 
-        clearInterval(intervalo);
-        for (const card of cards) {
-          card.removeEventListener('click', girarcard);
-       }
-
-        btn.addEventListener("click", function() {
-          location.reload();
-      });
-      btnAtras.addEventListener("click", function() {
-        window.location = "http://localhost/1rProjecteDAW2b2122/frontend/games.php"
-      });
-     }
+    clearInterval(intervalo);
+      for (const card of cards) {
+        card.removeEventListener('click', girarcard);
+      }
+  }
   }
 
   function finjuegoloser() {
     if (tiempo > 40) {
-      document.getElementById("finjuego").style.display="block";
-      document.getElementById("finjuego").innerHTML = "<h1>¡S'ha acabat el temps'! Prova una altra vegada :)</h1> <br>"
-      var btn = document.createElement("boton");
-      var btnAtras = document.createElement("boton");
-      btn.innerHTML = "Tornar a jugar <br>";
-
-      btnAtras.innerHTML = "Tornar enrere";                 
-      document.getElementById("finjuego").appendChild(btn);
-      document.getElementById("finjuego").appendChild(btnAtras);
-
-      btn.style.backgroundColor="#2069a5";
-      
-      btnAtras.style.backgroundColor="#2069a5";
-
-      btn.addEventListener("click", function() {
-        location.reload();
-      });
-      btnAtras.addEventListener("click", function() {
-        window.location = "http://localhost/1rProjecteDAW2b2122/frontend/games.php"
-      });
-
-      clearInterval(intervalo);
+      document.getElementById("modalderrota").style.display = "block";
+        cerrarmodalderrota.addEventListener("click", function() {
+      document.getElementById("modalderrota").style.display = "none";
+      location.reload();
+    });
+    clearInterval(intervalo);
       for (const card of cards) {
         card.removeEventListener('click', girarcard);
       }
      }
     }
+
+  function abrirmodal (){
+      document.getElementById("modalinicio").style.display = "block";
+      cerrarmodalinicio.addEventListener("click", function() {
+      document.getElementById("modalinicio").style.display = "none";
+      iniciarContador();
+      finjuegowin();
+      finjuegoloser();
+    });
+  }
 
 
 
@@ -151,11 +135,7 @@ function finjuegowin() {
 })();
 
 window.onload = function() {
-  iniciarContador();
-  finjuegowin();
-  finjuegoloser();
+  abrirmodal();
 }
-
-alert("Hola! Això és un petit tutorial perquè sàpigues com funciona aquest joc. \n El teu objectiu és combinar una de les cartes amb la seva parella fins aconseguir ajuntar totes les parelles. \n Bona sort de part de tots els integrants del grup!");
 
 cards.forEach(card => card.addEventListener('click', girarcard));

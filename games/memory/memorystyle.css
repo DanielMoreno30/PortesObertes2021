@@ -22,22 +22,9 @@
 	font-family: 'Assistant';
   }
 
-  .finjuego {
-	display: none;
-	font-family: 'Assistant';
-	position: absolute; 
-	margin-top: 100px;
-	z-index:3;
-	opacity:0.9;
-	font-size: 20px;
-	text-align: center;
-	color:#ffffff;
-	border-radius: 5px;
-	box-shadow: 5px 5px 5px #888888;
-	width: 300px;
-	height: 300px;
-	background: black;
-}
+  .modalinicio {
+	  z-index: 999999;
+  }
 
   .puntos {
 	position: absolute;
